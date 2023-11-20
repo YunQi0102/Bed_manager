@@ -6,5 +6,5 @@ document.querySelector(".current_time").innerHTML = Today.getFullYear()+ "年" +
 const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', toBedStatus);
 function toBedStatus() {
-    window.location="//127.0.0.1:5501/Ward/index.html";
+    window.location="//yunqi0102.github.io/Bed_manager/Ward/index.html";
 };

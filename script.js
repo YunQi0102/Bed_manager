@@ -7,6 +7,6 @@ const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', LogIn);
 function LogIn() {
     alert("登入成功!");
-    // open('//127.0.0.1:5501/Home/index.html'); 失敗
-    // window.location="//127.0.0.1:5501/Home/index.html"; 失敗
+    // open('//yunqi0102.github.io/Bed_manager/Home/index.html'); 失敗
+    // window.location="//yunqi0102.github.io/Bed_manager/Home/index.html"; 失敗
 };
