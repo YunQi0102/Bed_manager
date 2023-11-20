@@ -1,0 +1,78 @@
+body {
+    width: 1200px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #11A79C;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+div {
+    float: left;
+    width: 183px;
+    height: 180px;
+    margin: 8px 7px 24px;
+    padding-bottom: 50px;
+    border: 1px black solid;
+    border-radius: 10px;
+    box-shadow: 3px 5px #b8b8b8;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    margin: 0px;
+    width: 183px;
+    padding: 10px 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.male {
+    background-color: rgb(157, 209, 249);
+}
+
+.female {
+    background-color: rgba(249, 157, 197, 0.893);
+}
+
+h3, p {
+    margin: 0px;
+    width: 153px;
+}
+
+h3 {
+    padding: 10px 10px 5px 20px;
+}
+
+.dept {
+    border: 1px black solid;
+}
+
+p {
+    padding: 5px 0px 0px 20px;
+    line-height: 1.5;
+}
+
+/* 空床 */
+.empty_bed .female, .empty_bed .male {
+    background-color: rgba(153, 153, 153, 0.893);
+}
+
+.empty_bed {
+    background-color: #dddddd;
+}
+
+.empty_bed div {
+    padding: 0px;
+}
+
+.empty_bed h3 {
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+    width: 163px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>床位管理系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div>
+        <img src="img\FJUHlogo.jpg" alt="a hospital's logo">
+        <h1>輔大醫院</h1>
+        <div class="current_time"></div>
+    </div>
+</header>
+<main>
+    <form class="out">
+        <p>登入系統</p>
+        <div class="in">
+            <label for="account">帳號：</label>
+            <input type="text" id="account" size="12" placeholder="您的員工編號" autocomplete="current-password">
+        </div>
+        <div class="in">
+            <label for="password">密碼：</label>
+            <input type="password" id="password" size="12" placeholder="您的身分證字號" autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn" onclick="location.href='//127.0.0.1:5501/Home/index.html'">登入</button>
+    </form>
+</main>
+</body>
+<script src="script.js"></script>
+</html>
