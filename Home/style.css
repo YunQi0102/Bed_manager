@@ -4,6 +4,11 @@ body {
 }
 
 /* header */
+header {
+    position: sticky;
+    top: 0;
+}
+
 header div {
     background-color: #c6eeff;
     margin: 0px;
