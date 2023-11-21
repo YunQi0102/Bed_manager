@@ -78,15 +78,23 @@ main .in {
 select {
     border: 0;
     border-bottom: 1.5px #4479a1 solid;
-    font-size: 14px;
+    font-size: 17px;
     width: 150px;
 }
 
 #indexNum {
     border: 0;
     border-bottom: 1.5px #4479a1 solid;
-    font-size: 14px;
+    font-size: 17px;
     width: 166px;
+    font-family: serif;
+}
+
+span {
+    color: black;
+    font-family: serif;
+    font-weight: lighter;
+    font-size: 17px;
 }
 
 .btn {
@@ -164,4 +172,6 @@ ul p {
 
 .update_date, .update_time {
     color: #004B84;
+    font-weight: bold;
+    font-size: 14px;
 }

@@ -1,6 +1,5 @@
 body {
     width: 1200px;
-    height: 500px;
 }
 
 /* header */
@@ -52,11 +51,11 @@ header h1 {
 
 /* main */
 main .out {
-    float: right;
+    float: left;
     width: 1120px;
     border: #004B84 2px solid;
     border-radius: 30px;
-    margin: 15px auto;
+    margin: 15px 8px;
 
 }
 
@@ -65,8 +64,8 @@ main p {
     font-weight: bold;
     text-align: center;
     color: #4479a1;
-    margin: 15px 0px 10px;
-    letter-spacing: 2px
+    margin: 15px 0px 5px;
+    letter-spacing: 2px;
 }
 
 table, td {
@@ -83,24 +82,25 @@ td {
     height: 35px;
 }
 
-.input {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    font-size: 16px;
-    width: 120px;
-    font-family: sans-serif;
-}
-
 .remark {
     border: 0;
     border-bottom: 1.5px #4479a1 solid;
     font-size: 14px;
 }
 
+.input {
+    border: 0;
+    border-bottom: 1.5px #4479a1 solid;
+    font-size: 17px;
+    width: 120px;
+    font-family: serif;
+}
+
 span {
     color: black;
-    font-family: sans-serif;
+    font-family: serif;
     font-weight: lighter;
+    font-size: 17px;
 }
 
 .btn {
@@ -109,7 +109,7 @@ span {
     letter-spacing: 2px;
     width: 120px;
     height: 35px;
-    margin: 15px 490px 20px;
+    margin: 10px 490px 20px;
     color: #004B84;
     background-color: #c6eeff;
     border: 0;
@@ -132,7 +132,7 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 65px;
+    width: 60px;
     height: 500px;
     background-color: #fffbe4;
     color: #004B84;
@@ -145,7 +145,11 @@ nav a {
     display: block;
     text-align: center;
     font-size: 15px;
-    padding: 10px;
+    padding: 5px;
+}
+
+nav .second_img {
+    opacity: 0;
 }
 
 nav a:hover {
@@ -153,12 +157,27 @@ nav a:hover {
     color: white;
 }
 
+nav a:hover .first_img {
+    opacity: 0;
+}
+
+nav a:hover .second_img {
+    opacity: 1;
+}
+
+nav img {
+    position: absolute;
+    left: 22px;
+}
+
 ul p {
     font-size: 12px;
     color: #004B84;
-    margin-top: 285px;
+    margin-top: 180px;
 }
 
 .update_date, .update_time {
     color: #004B84;
+    font-weight: bold;
+    font-size: 14px;
 }

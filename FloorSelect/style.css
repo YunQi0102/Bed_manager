@@ -3,6 +3,11 @@ body {
 }
 
 /* header */
+header {
+    position: sticky;
+    top: 0;
+}
+
 header div {
     background-color: #c6eeff;
     margin: 0px;
@@ -46,7 +51,10 @@ header h1 {
 
 /* main */
 main div {
-    margin: 20px auto;
+    float: left;
+    width: 1100px;
+    margin: 0px 20px;
+    /* border: #004B84 1px solid; */
 }
 
 button {
@@ -54,7 +62,7 @@ button {
     width: 150px;
     background-color: #fffbe4;
     color: #004B84;
-    margin: 10px 45px 20px;
+    margin: 25px 35px 10px;
     padding: 12px 0px;
     border-radius: 100px;
     border: 2px #004B84 solid;
@@ -73,4 +81,66 @@ button:hover {
 button:active {
     transform: translateY(3px);
     box-shadow: 3px 3px #666;
+}
+
+/* navbar */
+nav {
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 500px;
+    background-color: #fffbe4;
+    color: #004B84;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+}
+
+nav .second_img {
+    opacity: 0;
+}
+
+nav a:hover {
+    background-color: #4479a1;
+    color: white;
+}
+
+nav a:hover .first_img {
+    opacity: 0;
+}
+
+nav a:hover .second_img {
+    opacity: 1;
+}
+
+nav img {
+    position: absolute;
+    left: 22px;
+}
+
+ul p {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #004B84;
+    margin-top: 180px;
+}
+
+.update_date, .update_time {
+    color: #004B84;
+    font-weight: bold;
+    font-size: 14px;
 }
