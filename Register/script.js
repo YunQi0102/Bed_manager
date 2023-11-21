@@ -25,5 +25,5 @@ function current() {
 const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', LogIn);
 function LogIn() {
-    alert("登記成功!");
+    window.location="//yunqi0102.github.io/Bed_manager/Form/index.html";
 };

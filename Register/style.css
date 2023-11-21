@@ -52,11 +52,11 @@ header h1 {
 
 /* main */
 main .out {
+    float: left;
     width: 400px;
     border: #004B84 2px solid;
     border-radius: 30px;
     margin: 55px 360px;
-
 }
 
 main p {

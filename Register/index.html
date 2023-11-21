@@ -23,44 +23,46 @@
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
             <li><a href="https://yunqi0102.github.io/Bed_manager/Register/index.html">
                 <img src="..\img\LOGO_register.png" width="33px" class="first_img"><img src="..\img\LOGO_register2.png" width="33px" class="second_img"><br><br>登記</a></li>
-            <li><a href="">
+            <li><a href="//yunqi0102.github.io/Bed_manager/FloorSelect/index.html"">
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
             <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
-    <form class="out">
-        <p>預約住院登記及處理<br>（含單人床登記）</p>
-        <div class="in">
-            <label for="department">病患科別：</label>
-            <select id="department" class="input">
-                <option>請選擇科別</option>
-                <optgroup label="外科">
-                    <option>一般外科</option>
-                    <option>神經外科</option>
-                    <option>胸腔外科</option>
-                    <option>小兒外科</option>
-                </optgroup>
-                    <optgroup label="內科">
-                    <option>一般內科</option>
-                    <option>胸腔內科</option>
-                    <option>腎臟內科</option>
-                </optgroup>
-            </select>
-        </div>
-        <div class="in">
-            <label for="indexNum">索引號：</label>
-            <input type="number" id="indexNum" class="input" min="0" placeholder="請輸入病歷號碼">
-        </div>
-        <div class="in">
-            <label for="sourse">病患來源：</label>
-            <select id="sourse" class="input">
-                <option>請選擇來源</option>
-                <option>門診</option>
-                <option>急診</option>
-            </select>
-        </div>
-        <button type="submit" class="btn" onclick="location.href='//yunqi0102.github.io/Bed_manager/Form/index.html'">預約登記</button>
-    </form>
+    <div class="out">
+        <form>
+            <p>預約住院登記及處理<br>（含單人床登記）</p>
+            <div class="in">
+                <label for="department">病患科別：</label>
+                <select id="department" class="input">
+                    <option>請選擇科別</option>
+                    <optgroup label="外科">
+                        <option>一般外科</option>
+                        <option>神經外科</option>
+                        <option>胸腔外科</option>
+                        <option>小兒外科</option>
+                    </optgroup>
+                        <optgroup label="內科">
+                        <option>一般內科</option>
+                        <option>胸腔內科</option>
+                        <option>腎臟內科</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="in">
+                <label for="indexNum">索引號：</label>
+                <input type="number" id="indexNum" class="input" min="0" placeholder="請輸入病歷號碼">
+            </div>
+            <div class="in">
+                <label for="sourse">病患來源：</label>
+                <select id="sourse" class="input">
+                    <option>請選擇來源</option>
+                    <option>門診</option>
+                    <option>急診</option>
+                </select>
+            </div>
+        </form>
+        <button class="btn">預約登記</button>
+    </div>
 </main>
 </body>
 <script src="script.js"></script>

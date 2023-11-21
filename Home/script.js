@@ -21,3 +21,9 @@ clickbtn2.addEventListener('click', toRegister);
 function toRegister() {
     window.location="//yunqi0102.github.io/Bed_manager/Register/index.html";
 };
+
+const clickbtn3 = document.querySelector(".three");
+clickbtn3.addEventListener('click', toFloorSelect);
+function toFloorSelect() {
+    window.location="//yunqi0102.github.io/Bed_manager/FloorSelect/index.html";
+};
