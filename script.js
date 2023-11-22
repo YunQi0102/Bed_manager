@@ -22,6 +22,6 @@ const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', LogIn);
 function LogIn() {
     alert("登入成功!");
-    // open('//yunqi0102.github.io/Bed_manager/Home/index.html'); 失敗
-    // window.location="//yunqi0102.github.io/Bed_manager/Home/index.html"; 失敗
+    // open('https://yunqi0102.000webhostapp.com/Home/'); 失敗
+    // window.location="https://yunqi0102.000webhostapp.com/Home/"; 失敗
 };

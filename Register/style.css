@@ -1,6 +1,5 @@
 body {
     width: 1200px;
-    height: 500px;
 }
 
 /* header */
@@ -48,73 +47,6 @@ header h1 {
     font-weight: normal;
     letter-spacing: 3px;
     margin: 4px 25px 0px;
-}
-
-/* main */
-main .out {
-    float: left;
-    width: 400px;
-    border: #004B84 2px solid;
-    border-radius: 30px;
-    margin: 55px 360px;
-}
-
-main p {
-    font-size: 26px;
-    font-weight: bold;
-    text-align: center;
-    color: #4479a1;
-    margin: 30px 0px 0px;
-    letter-spacing: 2px
-}
-
-main .in {
-    color: #4479a1;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 30px 65px 30px;
-}
-
-select {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    font-size: 17px;
-    width: 150px;
-}
-
-#indexNum {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    font-size: 17px;
-    width: 166px;
-    font-family: serif;
-}
-
-span {
-    color: black;
-    font-family: serif;
-    font-weight: lighter;
-    font-size: 17px;
-}
-
-.btn {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    width: 120px;
-    height: 35px;
-    margin: 10px 138px 30px;
-    color: #004B84;
-    background-color: #c6eeff;
-    border: 0;
-    border-radius: 10px;
-    transition-duration: 0.25s;
-}
-
-.btn:hover {
-    background-color: #004b84d1;
-    color: white;
-    cursor: pointer;
 }
 
 /* navbar */
@@ -166,12 +98,82 @@ nav img {
 
 ul p {
     font-size: 12px;
+    font-weight: bold;
     color: #004B84;
     margin-top: 180px;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 .update_date, .update_time {
-    color: #004B84;
-    font-weight: bold;
     font-size: 14px;
+    font-weight: bold;
+    color: #004B84;
+}
+
+/* main */
+main .out {
+    float: left;
+    width: 400px;
+    border: #004B84 2px solid;
+    border-radius: 30px;
+    margin: 55px 360px;
+}
+
+main div p {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    color: #4479a1;
+    margin: 30px 0px 0px;
+    letter-spacing: 2px;
+}
+
+main .in {
+    color: #4479a1;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px 65px 30px;
+}
+
+select {
+    border: 0;
+    border-bottom: 1.5px #4479a1 solid;
+    font-size: 17px;
+    width: 150px;
+}
+
+#indexNum {
+    border: 0;
+    border-bottom: 1.5px #4479a1 solid;
+    font-size: 17px;
+    width: 166px;
+    font-family: serif;
+}
+
+span {
+    color: black;
+    font-family: serif;
+    font-weight: lighter;
+    font-size: 17px;
+}
+
+.btn {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    width: 120px;
+    height: 35px;
+    margin: 10px 138px 30px;
+    color: #004B84;
+    background-color: #c6eeff;
+    border: 0;
+    border-radius: 10px;
+    transition-duration: 0.25s;
+}
+
+.btn:hover {
+    background-color: #004b84d1;
+    color: white;
+    cursor: pointer;
 }

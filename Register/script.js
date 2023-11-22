@@ -2,9 +2,9 @@ var Today = new Date();
 var Year = Today.getFullYear();
 var Month = Today.getMonth();
 var Date = Today.getDate();
-// var Hour = Today.getHours();
-// var Minute = Today.getMinutes();
-// var Second = Today.getSeconds();
+var Hour = Today.getHours();
+var Minute = Today.getMinutes();
+var Second = Today.getSeconds();
 var day  = Today.getDay();
 var day_list = ['日', '一', '二', '三', '四', '五', '六'];
 
@@ -25,5 +25,7 @@ function current() {
 const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', LogIn);
 function LogIn() {
-    window.location="//yunqi0102.github.io/Bed_manager/Form/index.html";
+    // event.preventDefault();
+    window.location="https://yunqi0102.000webhostapp.com/Form/";
+    // location.replace="https://yunqi0102.000webhostapp.com/Form/";
 };

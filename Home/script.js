@@ -19,11 +19,11 @@ function current() {
 const clickbtn2 = document.querySelector(".two");
 clickbtn2.addEventListener('click', toRegister);
 function toRegister() {
-    window.location="//yunqi0102.github.io/Bed_manager/Register/index.html";
+    window.location="https://yunqi0102.000webhostapp.com/Register/";
 };
 
 const clickbtn3 = document.querySelector(".three");
 clickbtn3.addEventListener('click', toFloorSelect);
 function toFloorSelect() {
-    window.location="//yunqi0102.github.io/Bed_manager/FloorSelect/index.html";
+    window.location="https://yunqi0102.000webhostapp.com/FloorSelect/";
 };
