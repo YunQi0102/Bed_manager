@@ -5,7 +5,7 @@
     <title>床位管理系統-登記</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="current()">
+<body>
 <header>
     <div>
         <img src="..\img\FJUHlogo.jpg" alt="a hospital's logo">
@@ -29,12 +29,12 @@
         </ul>
     </nav>
     <div class="out">
-        <form action="test.php" method="post">
+        <form action="insert.php" method="post">
             <p>預約住院登記及處理<br>（含單人床登記）</p>
             <div class="in">
                 <label for="department">病患科別：</label>
                 <select name="department" id="department" class="input">
-                    <option>請選擇科別</option>
+                    <option disabled selected>請選擇科別</option>
                     <optgroup label="外科">
                         <option>一般外科</option>
                         <option>神經外科</option>
@@ -55,16 +55,16 @@
             <div class="in">
                 <label for="sourse">病患來源：</label>
                 <select name="sourse" id="sourse" class="input">
-                    <option>請選擇來源</option>
+                    <option disabled selected>請選擇來源</option>
                     <option>門診</option>
                     <option>急診</option>
                 </select>
             </div>
-            <input type="submit" value="預約登記" class="btn" onclick="https://yunqi0102.000webhostapp.com/Form/">
+            <input type="submit" value="預約登記" class="btn">
         </form>
         <!-- <button class="btn">預約登記</button> -->
     </div>
 </main>
-</body>
 <script src="script.js"></script>
+</body>
 </html>
