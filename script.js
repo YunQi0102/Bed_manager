@@ -1,4 +1,6 @@
-window.onload = current_time;
+window.onload = function() {
+    current_time();
+}
 
 function current_time() {
     var Today = new Date();

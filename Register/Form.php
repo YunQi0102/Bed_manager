@@ -7,15 +7,17 @@
         exit(); // 終止程序
     }
     
-    // 從前端獲取資料
+    // 從表單獲取資料
     $medical_record_id = $_POST['medical_record_id'];
     $department = $_POST['department'];
     $sourse = $_POST['sourse'];
     
-    // 獲取資料
+    // 從資料庫查詢資料
     $sql = "SELECT * FROM patient WHERE (medical_record_id=".$medical_record_id.")";
     $retval = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($retval, MYSQLI_ASSOC);
+    $row = mysqli_fetch_array($retval,MYSQLI_NUM);
+    
+    if($row) {
 ?>
 
 <!DOCTYPE html>
@@ -48,61 +50,79 @@
             <p>最後更新<br><span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
-    <form class="out">
+    <form class="out" action="insert.php" method="post">
     <p>基本資料</p>
     <table>
         <tr>
-<?php
-    echo "<td>索引號：{$medical_record_id}</td>".
-         "<td>病患來源：{$sourse}</td>".
-         "<td>科別：{$department}</td>";
-?>
+            <td>索引號：
+                <input type="number" name="medical_record_id" class="insert" readonly=true 
+                    value="<?php echo "{$medical_record_id}"; ?>">
+            </td>
+            <td>病患來源：
+                <input type="text" name="sourse" class="insert" readonly=true 
+                    value="<?php echo "{$sourse}"; ?>">
+            </td>
+            <td>科別：
+                <input type="text" name="department" class="insert" readonly=true 
+                    value="<?php echo "{$department}"; ?>">
+            </td>
         </tr>
         <tr>
-<?php
-    echo "<td>病患姓名：{$row["name"]}</td>".
-         "<td>性別：{$row["gender"]}</td>".
-         "<td>身份：{$row["identity"]}</td>"
-?>
+            <td>病患姓名：
+                <input type="text" name="patient_name" class="insert" readonly=true 
+                    value="<?php echo "{$row[1]}"; ?>">
+            </td>
+            <td>性別：
+                <input type="text" name="gender" class="insert" readonly=true 
+                    value="<?php echo "{$row[2]}"; ?>">
+            </td>
+            <td>身份：
+                <input type="text" name="identity" class="insert" readonly=true 
+                    value="<?php echo "{$row[3]}"; ?>">
+            </td>
         </tr>
         <tr>
-<?php
-    echo "<td>就診號：{$row["clinic_number"]}</td>"
-?>
-        <td>登記日期/時間：<span class="update_date"></span></td>
-<?php
-    echo "<td>簽證醫師：{$row["doctor"]}</td>"
-?>
+            <td>就診號：
+                <input type="number" name="clinic_number" class="insert" readonly=true 
+                    value="<?php echo "{$row[4]}"; ?>">
+            </td>
+            <td>登記日期/時間：
+                <span class="insert" id="register_datetime"></span>
+                <!--<input type="datetime" class="insert" id="register_datetime" readonly=true>-->
+            <td>簽證醫師：
+                <input type="text" name="visa_doctor" class="insert" readonly=true 
+                    value="<?php echo "{$row[5]}"; ?>">
+            </td>
         </tr>
         <tr>
             <td>連絡電話：
-                <input type="tel" class="input" maxlength="10">
+                <input type="tel" name="telephone_number" class="input" maxlength="10" value="0">
             </td>
             <td>預約日期/時間：
-                <input type="date" class="input" style="width: 120px;">
-                <input type="time" class="input" style="width: 115px;">
+                <input type="date" name="reserve_date" class="input" style="width: 120px;">
+                <!--<input type="time" name="reserve_time" class="input" style="width: 115px;">-->
             </td>
             <td>隔離與否：
-                <input type="radio" name="isolate" id="isolate_yes">
+                <input type="radio" name="isolation" id="isolate_yes" value=1>
                 <label for="isolate_yes">是</label>
-                <input type="radio" name="isolate" id="isolate_no">
+                <input type="radio" name="isolation" id="isolate_no" value=0>
                 <label for="isolate_no">否</label>
             </td>
         </tr>
         <tr>
             <td>手機號碼：
-                <input type="tel" class="input" maxlength="10">
+                <input type="tel" name="phone_number" class="input" maxlength="10">
             </td>
             <td>預約住院天數：
-                <input type="number" class="input" min="1">
+                <input type="number" name="reserve_days" class="input" min="1" value=null;>
             </td>
             <td rowspan="2">隔離註記：
-                <input type="text" class="input remark" style="width: 290px;">
+                <input type="text" name="isolation_note" class="input remark" style="width: 290px;">
             </td>
         </tr>
         <tr>
             <td>優先順序：
-                <select class="input">
+                <select class="input" name="priorities">
                     <option>請選擇順序</option>
                     <option>VIP</option>
                     <option>開刀</option>
@@ -110,56 +130,63 @@
                 </select>
             </td>
             <td>離院日期：
-                <input type="date" class="input" style="width: 110px;">
+                <input type="date" name="discharged_date" class="input" style="width: 110px;">
             </td>
         </tr>
         <tr>
             <td style="width: 30%;">手術住院：
-                <input type="radio" name="surgery" id="surgery_yes">
+                <input type="radio" name="operation" id="surgery_yes" value=1>
                 <label for="surgery_yes">是</label>
-                <input type="radio" name="surgery" id="surgery_no">
+                <input type="radio" name="operation" id="surgery_no" value=0>
                 <label for="surgery_no">否</label>
             </td>
             <td>重大傷病：
-                <input type="radio" name="severe" id="severe_yes">
+                <input type="radio" name="severely_injured" id="severe_yes" value=1>
                 <label for="severe_yes">是</label>
-                <input type="radio" name="severe" id="severe_no">
+                <input type="radio" name="severely_injured" id="severe_no" value=0>
                 <label for="severe_no">否</label>
             </td>
             <td style="width: 30%;">簽住公床：
-                <input type="radio" name="public" id="public_yes">
+                <input type="radio" name="public_bed" id="public_yes" value=1>
                 <label for="public_yes">是</label>
-                <input type="radio" name="public" id="public_no">
+                <input type="radio" name="public_bed" id="public_no" value=0>
                 <label for="public_no">否</label>
             </td>
         </tr>
         <tr>
             <td>化療住院：
-                <input type="radio" name="chemotherapy" id="chemotherapy_yes">
+                <input type="radio" name="chemotherapy" id="chemotherapy_yes" value=1>
                 <label for="chemotherapy_yes">是</label>
-                <input type="radio" name="chemotherapy" id="chemotherapy_no">
+                <input type="radio" name="chemotherapy" id="chemotherapy_no" value=0>
                 <label for="chemotherapy_no">否</label>
             </td>
             <td>加護病房：
-                <input type="radio" name="intensive_care" id="intensive_care_yes">
+                <input type="radio" name="ICU" id="intensive_care_yes" value=1>
                 <label for="intensive_care_yes">是</label>
-                <input type="radio" name="intensive_care" id="intensive_care_no">
+                <input type="radio" name="ICU" id="intensive_care_no" value=0>
                 <label for="intensive_care_no">否</label>
             </td>
         </tr>
         <tr>
             <td colspan="3">備註：
-                <input type="text" class="remark" size="135">
+                <input type="text" name="note" class="remark" size="135">
             </td>
         </tr>
     </table>
-    <input type="submit" value="確認" class="btn" onclick="location.href='https://yunqi0102.000webhostapp.com/Home/'">
+    <input type="submit" value="確認" class="btn">
     </form>
 </main>
 <script src="Fscript.js"></script>
 </body>
 </html>
 <?php
+    } else {
+        echo "<script>alert('索引號填寫錯誤，請重新確認！'); history.back();</script>";
+        exit();
+    }
+    
+    // 釋放結果集
+    mysqli_free_result($retval);
     // 中斷連接資料庫
     $conn->close();
 ?>

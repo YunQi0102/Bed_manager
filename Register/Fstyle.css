@@ -82,12 +82,6 @@ td {
     height: 35px;
 }
 
-.remark {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    font-size: 14px;
-}
-
 .input {
     border: 0;
     border-bottom: 1.5px #4479a1 solid;
@@ -96,12 +90,32 @@ td {
     font-family: serif;
 }
 
-span {
-    color: black;
-    font-family: serif;
-    font-weight: lighter;
+.insert {
+    border: 0;
     font-size: 17px;
+    font-family: serif;
 }
+
+.insert:hover {
+    cursor: default;
+}
+
+.insert:active {
+    border: 0;
+}
+
+.remark {
+    border: 0;
+    border-bottom: 1.5px #4479a1 solid;
+    font-size: 14px;
+}
+
+/*.register_datetime {*/
+/*    color: #4479a1;*/
+/*    font-weight: 600;*/
+/*    font-size: 17px;*/
+/*    font-family: serif;*/
+/*}*/
 
 .btn {
     font-size: 18px;
