@@ -9,12 +9,12 @@
 <header>
     <div>
         <img src="img\FJUHlogo.jpg" alt="a hospital's logo">
-        <h1>輔大醫院</h1>
+        <h1>輔大醫院-床位管理系統</h1>
         <div class="current_time"></div>
     </div>
 </header>
 <main>
-    <form class="out">
+    <form class="out" action="Home.php" method="post">
         <p>登入系統</p>
         <div class="in">
             <label for="account">帳號：</label>
@@ -24,7 +24,7 @@
             <label for="password">密碼：</label>
             <input type="password" id="password" size="12" placeholder="您的身分證字號" autocomplete="current-password">
         </div>
-        <button type="submit" class="btn" onclick="location.href='https://yunqi0102.000webhostapp.com/Home/'">登入</button>
+        <button type="submit" class="btn">登入</button>
     </form>
 </main>
 <script src="script.js"></script>

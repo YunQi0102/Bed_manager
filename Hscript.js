@@ -9,12 +9,14 @@ function current_time() {
     setTimeout('current_time()',1000);
 }
 
-var Today = new Date();
-document.querySelector(".update_date").innerHTML = Today.toLocaleDateString([], { month: "2-digit", day: "2-digit" });
-document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit"});
+const clickbtn2 = document.querySelector(".two");
+clickbtn2.addEventListener('click', toRegister);
+function toRegister() {
+    window.location="https://yunqi0102.000webhostapp.com/Register/";
+};
 
-const clickbtn = document.querySelector(".btn");
-clickbtn.addEventListener('click', toBedStatus);
-function toBedStatus() {
-    window.location="https://yunqi0102.000webhostapp.com/Ward/";
-}
+const clickbtn3 = document.querySelector(".three");
+clickbtn3.addEventListener('click', toFloorSelect);
+function toFloorSelect() {
+    window.location="https://yunqi0102.000webhostapp.com/FloorSelect/";
+};

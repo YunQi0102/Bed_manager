@@ -13,6 +13,4 @@ const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', LogIn);
 function LogIn() {
     alert("登入成功!");
-    // open('https://yunqi0102.000webhostapp.com/Home/');
-    // window.location="https://yunqi0102.000webhostapp.com/Home/";
 }

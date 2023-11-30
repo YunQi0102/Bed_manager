@@ -24,9 +24,10 @@ header h1 {
     float: left;
     display: inline;
     color: #004B84;
-    padding-top: 3px;
+    padding-top: 6px;
     margin: 0px;
-    letter-spacing: 5px
+    letter-spacing: 5px;
+    font-size: 28px;
 }
 
 .current_time {
@@ -98,10 +99,6 @@ td {
 
 .insert:hover {
     cursor: default;
-}
-
-.insert:active {
-    border: 0;
 }
 
 .remark {

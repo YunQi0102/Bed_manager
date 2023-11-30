@@ -17,6 +17,9 @@
     $retval = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($retval,MYSQLI_NUM);
     
+    date_default_timezone_set('Asia/Taipei');
+    $current = date("Y-m-d H:i:s");
+    
     if($row) {
 ?>
 
@@ -31,7 +34,7 @@
 <header>
     <div>
         <img src="..\img\FJUHlogo.jpg" alt="a hospital's logo">
-        <h1>輔大醫院</h1>
+        <h1>輔大醫院-床位管理系統</h1>
         <h1 class="subtitle">預約住院登記及處理</h1>
         <div class="current_time"></div>
     </div>
@@ -39,9 +42,9 @@
 <main>
     <nav>
         <ul>
-            <li><a href="https://yunqi0102.000webhostapp.com/Home/" style="padding-top: 10px;">
+            <li><a href="https://yunqi0102.000webhostapp.com/Home.php" style="padding-top: 10px;">
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
-            <li><a href="">
+            <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
             <li><a href="https://yunqi0102.000webhostapp.com/Register/">
                 <img src="..\img\LOGO_register.png" width="33px" class="first_img"><img src="..\img\LOGO_register2.png" width="33px" class="second_img"><br><br>登記</a></li>
@@ -54,7 +57,7 @@
     <p>基本資料</p>
     <table>
         <tr>
-            <td>索引號：
+            <td style="width: 30%;">索引號：
                 <input type="number" name="medical_record_id" class="insert" readonly=true 
                     value="<?php echo "{$medical_record_id}"; ?>">
             </td>
@@ -62,7 +65,7 @@
                 <input type="text" name="sourse" class="insert" readonly=true 
                     value="<?php echo "{$sourse}"; ?>">
             </td>
-            <td>科別：
+            <td style="width: 30%;">科別：
                 <input type="text" name="department" class="insert" readonly=true 
                     value="<?php echo "{$department}"; ?>">
             </td>
@@ -87,8 +90,9 @@
                     value="<?php echo "{$row[4]}"; ?>">
             </td>
             <td>登記日期/時間：
-                <span class="insert" id="register_datetime"></span>
-                <!--<input type="datetime" class="insert" id="register_datetime" readonly=true>-->
+                <!--<input type="datetime" name="register_datetime" class="insert" readonly=true-->
+                <!--    value="<?php echo $current; ?>">-->
+                <span class="insert"><?php echo $current; ?></span>
             <td>簽證醫師：
                 <input type="text" name="visa_doctor" class="insert" readonly=true 
                     value="<?php echo "{$row[5]}"; ?>">
@@ -134,7 +138,7 @@
             </td>
         </tr>
         <tr>
-            <td style="width: 30%;">手術住院：
+            <td>手術住院：
                 <input type="radio" name="operation" id="surgery_yes" value=1>
                 <label for="surgery_yes">是</label>
                 <input type="radio" name="operation" id="surgery_no" value=0>
@@ -146,7 +150,7 @@
                 <input type="radio" name="severely_injured" id="severe_no" value=0>
                 <label for="severe_no">否</label>
             </td>
-            <td style="width: 30%;">簽住公床：
+            <td>簽住公床：
                 <input type="radio" name="public_bed" id="public_yes" value=1>
                 <label for="public_yes">是</label>
                 <input type="radio" name="public_bed" id="public_no" value=0>

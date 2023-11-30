@@ -12,9 +12,15 @@ function current_time() {
 
 function register_datetime() {
     var Today = new Date();
-    document.querySelector("#register_datetime").innerHTML = Today.getFullYear() + "/" + (Today.getMonth()+1) +  "/" + Today.getDate() + " " + Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
+    document.querySelector(".register_datetime").innerHTML = Today.getFullYear() + "/" + (Today.getMonth()+1) +  "/" + Today.getDate() + " " + Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
     setTimeout('register_datetime()',1000);
 }
+
+// function register_time() {
+//     var Today = new Date();
+//     document.querySelector("#register_time").innerHTML = Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
+//     setTimeout('register_datetime()',1000);
+// }
 
 var Today = new Date();
 document.querySelector(".update_date").innerHTML = Today.toLocaleDateString([], { month: "2-digit", day: "2-digit" });
