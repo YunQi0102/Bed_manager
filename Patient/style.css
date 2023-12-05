@@ -1,5 +1,6 @@
 body {
     width: 1200px;
+    overflow-x: hidden;
 }
 
 /* header */
@@ -50,101 +51,17 @@ header h1 {
     margin: 4px 25px 0px;
 }
 
-/* main */
-main .out {
-    float: left;
-    width: 1120px;
-    border: #004B84 2px solid;
-    border-radius: 30px;
-    margin: 15px 8px;
-
-}
-
-main p {
-    font-size: 26px;
-    font-weight: bold;
-    text-align: center;
-    color: #4479a1;
-    margin: 15px 0px 5px;
-    letter-spacing: 2px;
-}
-
-table, td {
-    /*border: 1px #004B84 solid;*/
-    border-collapse: collapse;
-    width: 1060px;
-    margin: 10px 30px;
-    color: #4479a1;
-    font-weight: 600;
-    font-size: 17px;
-}
-
-td {
-    height: 35px;
-}
-
-.input {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    font-size: 17px;
-    width: 120px;
-    font-family: serif;
-}
-
-.insert {
-    border: 0;
-    font-size: 17px;
-    font-family: serif;
-}
-
-.insert:hover {
-    cursor: default;
-}
-
-.remark {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    font-size: 14px;
-}
-
-/*.register_datetime {*/
-/*    color: #4479a1;*/
-/*    font-weight: 600;*/
-/*    font-size: 17px;*/
-/*    font-family: serif;*/
-/*}*/
-
-.btn {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    width: 120px;
-    height: 35px;
-    margin: 10px 500px 20px;
-    color: #004B84;
-    background-color: #c6eeff;
-    border: 0;
-    border-radius: 10px;
-    transition-duration: 0.25s;
-}
-
-.btn:hover {
-    background-color: #004b84d1;
-    color: white;
-    cursor: pointer;
-}
-
 /* navbar */
-nav, form {
+nav {
     float: left;
+    width: 60px;
+    height: 500px;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 60px;
-    height: 500px;
     background-color: #fffbe4;
     color: #004B84;
     font-weight: 700;
@@ -182,6 +99,10 @@ nav img {
 }
 
 ul p {
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
     font-size: 12px;
     color: #004B84;
     margin-top: 110px;
@@ -192,3 +113,45 @@ ul p {
     font-weight: bold;
     font-size: 14px;
 }
+
+/* main */
+main {
+    display: flex;
+}
+
+table {
+    float: left;
+    display: block;
+    width: 0px;
+    margin: 10px;
+    flex-grow: 1;
+    overflow-x: scroll;
+}
+
+table, th, td {
+    /* border: #004B84 1px solid; */
+    border-collapse: collapse;
+}
+
+th, td {
+    border: #004B84 1.3px solid;
+    padding: 8px 0px;
+}
+
+/* 捲軸 */
+table::-webkit-scrollbar {
+    height: 10px;
+}
+
+table::-webkit-scrollbar-thumb {
+    background-color: #c6eeff;
+    -webkit-border-radius: 10px;
+}
+
+table::-webkit-scrollbar-thumb:hover {
+    background-color: #beebff;
+}
+
+/* table::-webkit-scrollbar-track {
+    background-color: #fffbe4;
+} */

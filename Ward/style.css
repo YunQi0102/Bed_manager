@@ -101,7 +101,7 @@ ul p {
     font-size: 12px;
     text-align: center;
     color: #004B84;
-    margin-top: 180px;
+    margin-top: 110px;
     letter-spacing: 2px;
 }
 
@@ -110,13 +110,6 @@ ul p {
 }
 
 /* main */
-main .list {
-    border-right: #004B84 2px solid;
-    float: left;
-    width: 300px;
-    height: 500px;
-}
-
 main .status {
     /* border: #004B84 1px solid; */
     float: left;
@@ -126,8 +119,8 @@ main .status {
 
 main .bed, main .empty_bed {
     float: left;
-    width: 183px;
-    height: 180px;
+    width: 360px;
+    height: 250px;
     margin: 8px 7px 24px;
     padding-bottom: 50px;
     border: 1px black solid;
@@ -138,8 +131,9 @@ main .bed, main .empty_bed {
 
 main h2 {
     text-align: center;
+    letter-spacing: 1.5px;
     margin: 0px;
-    width: 183px;
+    width: 360px;
     padding: 10px 0px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -153,22 +147,48 @@ main h2 {
     background-color: rgba(249, 157, 197, 0.893);
 }
 
-main h3, main div p {
+main h3, main div td {
     margin: 0px;
-    width: 153px;
+    width: 330px;
 }
 
 main h3 {
-    padding: 10px 10px 5px 20px;
+    padding: 20px 10px 5px 20px;
 }
 
 .dept {
     border: 1px black solid;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-main div p {
-    padding: 5px 0px 0px 20px;
-    line-height: 1.5;
+table {
+    width: 340px;
+    margin: 10px 10px;
+}
+
+table, td {
+    /* border: #004B84 1px solid; */
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+main .note {
+    padding: 10px 10px 5px 20px;
+}
+
+main .surg, main .chem {
+    border: 2.5px black solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+main .surg {
+    border-color: rgb(217, 0, 0);
+}
+
+main .chem {
+    border-color: rgb(0, 181, 217);
 }
 
 /* 空床 */
@@ -187,6 +207,7 @@ main div p {
 .empty_bed h3 {
     text-align: center;
     font-size: 25px;
-    padding: 10px;
-    width: 163px;
+    padding: 90px 0px 0px;
+    width: 360px;
+    letter-spacing: 2px;
 }
