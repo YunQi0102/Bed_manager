@@ -82,7 +82,7 @@ button span {
     border: 2px #004B84 solid;
 }
 
-.two {
+.two, .four {
     background-color: #fffbe4;
     border: 2px #004B84 solid;
 }
@@ -98,6 +98,10 @@ button span {
 
 .two span, .three span {
     margin: 20px 0px;
+}
+
+.four span {
+    margin: 5px 0px 15px;
 }
 
 .one input {

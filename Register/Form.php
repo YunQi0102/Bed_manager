@@ -101,15 +101,15 @@
                     value="<?php echo "{$row[5]}"; ?>">
             </td>
             <td>隔離與否：
-                <input type="radio" name="isolation" id="isolate_yes" value=1>
+                <input type="radio" name="isolation" id="isolate_yes" value="是">
                 <label for="isolate_yes">是</label>
-                <input type="radio" name="isolation" id="isolate_no" value=0>
+                <input type="radio" name="isolation" id="isolate_no" value="否">
                 <label for="isolate_no">否</label>
             </td>
         </tr>
         <tr>
             <td>連絡電話：
-                <input type="tel" name="telephone_number" class="input" maxlength="10" value="0">
+                <input type="tel" name="telephone_number" class="input" maxlength="10" autocomplete="off" placeholder="例：27451542">
             </td>
             <td>預約日期：
                 <input type="date" name="reserve_date" class="input" style="width: 120px;">
@@ -121,10 +121,10 @@
         </tr>
         <tr>
             <td>手機號碼：
-                <input type="tel" name="phone_number" class="input" maxlength="10">
+                <input type="tel" name="phone_number" class="input" maxlength="10" autocomplete="off" placeholder="例：0912345678">
             </td>
             <td>預約住院天數：
-                <input type="number" name="reserve_days" class="input" min="1" value=null;>
+                <input type="number" name="reserve_days" class="input" min="1" value=null>
             </td>
         </tr>
         <tr>
@@ -137,46 +137,46 @@
                 </select>
             </td>
             <td>重大傷病：
-                <input type="radio" name="severely_injured" id="severe_yes" value=1>
+                <input type="radio" name="severely_injured" id="severe_yes" value="是">
                 <label for="severe_yes">是</label>
-                <input type="radio" name="severely_injured" id="severe_no" value=0>
+                <input type="radio" name="severely_injured" id="severe_no" value="否">
                 <label for="severe_no">否</label>
             </td>
             <td>簽住公床：
-                <input type="radio" name="public_bed" id="public_yes" value=1>
+                <input type="radio" name="public_bed" id="public_yes" value="是">
                 <label for="public_yes">是</label>
-                <input type="radio" name="public_bed" id="public_no" value=0>
+                <input type="radio" name="public_bed" id="public_no" value="否">
                 <label for="public_no">否</label>
             </td>
         </tr>
         <tr>
             <td>手術住院：
-                <input type="radio" name="operation" id="surgery_yes" value=1>
+                <input type="radio" name="operation" id="surgery_yes" value="是">
                 <label for="surgery_yes">是</label>
-                <input type="radio" name="operation" id="surgery_no" value=0>
+                <input type="radio" name="operation" id="surgery_no" value="否">
                 <label for="surgery_no">否</label>
             </td>
             <td>化療住院：
-                <input type="radio" name="chemotherapy" id="chemotherapy_yes" value=1>
+                <input type="radio" name="chemotherapy" id="chemotherapy_yes" value="是">
                 <label for="chemotherapy_yes">是</label>
-                <input type="radio" name="chemotherapy" id="chemotherapy_no" value=0>
+                <input type="radio" name="chemotherapy" id="chemotherapy_no" value="否">
                 <label for="chemotherapy_no">否</label>
             </td>
             <td>加護病房：
-                <input type="radio" name="ICU" id="intensive_care_yes" value=1>
+                <input type="radio" name="ICU" id="intensive_care_yes" value="是">
                 <label for="intensive_care_yes">是</label>
-                <input type="radio" name="ICU" id="intensive_care_no" value=0>
+                <input type="radio" name="ICU" id="intensive_care_no" value="否">
                 <label for="intensive_care_no">否</label>
             </td>
         </tr>
         <tr>
             <td colspan="3">隔離註記：
-                <input type="text" name="isolation_note" class="input remark" size="135">
+                <input type="text" name="isolation_note" class="input remark" size="135" autocomplete="off">
             </td>
         </tr>
         <tr>
             <td colspan="3">備註：
-                <input type="text" name="note" class="remark" size="135">
+                <input type="text" name="note" class="remark" size="135" autocomplete="off">
             </td>
         </tr>
     </table>

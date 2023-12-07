@@ -126,6 +126,7 @@ table {
     margin: 10px;
     flex-grow: 1;
     overflow-x: scroll;
+    table-layout: fixed;
 }
 
 table, th, td {
@@ -135,7 +136,12 @@ table, th, td {
 
 th, td {
     border: #004B84 1.3px solid;
-    padding: 8px 0px;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+th.auto-width, td.auto-width {
+    width: auto; /* 讓某一列的寬度自動調整 */
 }
 
 /* 捲軸 */

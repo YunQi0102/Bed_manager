@@ -21,8 +21,10 @@
                 <input type="image" src="..\img\dashboard.png" width="180px" style="border-radius: 10px;"></button></td>
             <td><button class="two"><span>床位登記</span>
                 <input type="image" src="..\img\register.png" width="155px" style="border-radius: 10px;"></button></td>
-            <td><button class="three"><span>床位查詢作業</span>
+            <td><button class="three"><span>床位查詢</span>
                 <input type="image" src="..\img\search.png" width="140px" style="border-radius: 10px;"></button></td>
+            <td><button class="four"><span>待床/控床清單</span>
+                <input type="image" src="..\img\list.png" width="100px" style="border-radius: 10px;"></button></td>
         </tr>
     </table>
 </main>

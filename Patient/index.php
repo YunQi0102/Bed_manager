@@ -10,7 +10,7 @@
     <div>
         <img src="..\img\FJUHlogo.jpg" alt="a hospital's logo">
         <h1>輔大醫院-床位管理系統</h1>
-        <h1 class="subtitle">待床病人清單</h1>
+        <h1 class="subtitle">待床/控床清單</h1>
         <div class="current_time"></div>
     </div>
 </header>
