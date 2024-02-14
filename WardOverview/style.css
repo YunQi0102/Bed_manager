@@ -1,0 +1,203 @@
+body {
+    width: 1200px;
+}
+
+/* header */
+header {
+    position: sticky;
+    top: 0;
+}
+
+header div {
+    background-color: #c6eeff;
+    margin: 0px;
+    height: 50px;
+}
+
+header img {
+    float: left;
+    height: 36px;
+    margin: 7px;
+}
+
+header h1 {
+    float: left;
+    display: inline;
+    color: #004B84;
+    padding-top: 6px;
+    margin: 0px;
+    letter-spacing: 5px;
+    font-size: 28px;
+}
+
+.current_time {
+    float: left;
+    height: 29px;
+    font-size: 20px;
+    color: #004B84;
+    background-color: white;
+    padding: 4px 20px;
+    margin: 6px 15px;
+    border-radius: 10px;
+    letter-spacing: 2px
+}
+
+.subtitle {
+    float: right;
+    font-size: 26px;
+    font-weight: normal;
+    letter-spacing: 3px;
+    margin: 4px 25px 0px;
+}
+
+/* main */
+.out {
+    float: left;
+    margin: 5px;
+}
+
+main .div1 {
+    float: left;
+    width: 90px;
+    padding: 5px 20px 0px;
+    border-right: #004B84 1.3px dashed;
+}
+
+main .div2 {
+    float: left;
+    width: 90px;
+    padding: 20px 20px 0px;
+    border-right: #004B84 1.3px dashed;
+}
+
+main .neg_div {
+    margin: 145px 0px 0px;
+}
+
+button {
+    float: left;
+    width: 90px;
+    height: 60px;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0px 0px 5px;
+    padding: 4px 0px;
+    border-radius: 10px;
+    border: 1.3px #000000 solid;
+    font-size: 16px;
+}
+
+.female {
+    background-color: #FFBBE5;
+}
+
+.male {
+    background-color: #BBE7FF;
+}
+
+.not_allowed {
+    background-color: #d6d6d6;
+}
+
+.ward_num {
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    color: #004B84;
+    font-weight: bold;
+    text-align: center;
+    margin: 3px 0px 6px;
+    background-color:#ffffff;
+    border-radius: 5px;
+    border: 1px #004B84 dotted;
+    box-shadow: 2px 3px #b8b8b8;
+}
+
+.neg_ward_num {
+    width: 90px;
+    height: 30px;
+    font-size: 18px;
+    color: #004B84;
+    font-weight: bold;
+    text-align: center;
+    margin: 3px 0px 6px;
+    background-color:#ffffff;
+    border-radius: 5px;
+    padding-top: 1px;
+    border: 1px #004B84 dotted;
+    box-shadow: 2px 3px #b8b8b8;
+}
+
+.ward_num:hover, .neg_ward_num:hover {
+    color:#004B84;
+    background-color:#FFFBE4;
+    border:1.5px #004B84 solid;
+    cursor: pointer;
+}
+
+.ward_num:active , .neg_ward_num:active {
+    transform: translateY(2.5px);
+    box-shadow: 2px 2px #666;
+}
+
+/* navbar */
+nav {
+    float: left;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 500px;
+    background-color: #fffbe4;
+    color: #004B84;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+}
+
+nav .second_img {
+    opacity: 0;
+}
+
+nav a:hover {
+    background-color: #4479a1;
+    color: white;
+}
+
+nav a:hover .first_img {
+    opacity: 0;
+}
+
+nav a:hover .second_img {
+    opacity: 1;
+}
+
+nav img {
+    position: absolute;
+    left: 22px;
+}
+
+ul p {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #004B84;
+    margin-top: 110px;
+}
+
+.update_date, .update_time {
+    color: #004B84;
+    font-weight: bold;
+    font-size: 14px;
+}

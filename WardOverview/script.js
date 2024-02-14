@@ -13,8 +13,8 @@ var Today = new Date();
 document.querySelector(".update_date").innerHTML = Today.toLocaleDateString([], { month: "2-digit", day: "2-digit" });
 document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit"});
 
-const clickbtn = document.querySelector(".btn");
+const clickbtn = document.querySelector(".btn1");
 clickbtn.addEventListener('click', toBedStatus);
 function toBedStatus() {
-    window.location="https://yunqi0102.000webhostapp.com/WardOverview/";
+    window.location="https://yunqi0102.000webhostapp.com/Ward/";
 }
