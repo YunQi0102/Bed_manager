@@ -27,7 +27,7 @@
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
-    <title>床位管理系統-表單</title>
+    <title>輔大醫院-床位管理系統（住院登記）</title>
     <link rel="stylesheet" href="Fstyle.css">
 </head>
 <body>

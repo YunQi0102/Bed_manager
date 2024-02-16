@@ -2,7 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
-    <title>病房狀況查詢</title>
+    <title>輔大醫院-床位管理系統（待床清單）</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -101,6 +101,6 @@
         $conn->close();
     ?>
 </main>
-</body>
 <script src="script.js"></script>
+</body>
 </html>

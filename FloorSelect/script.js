@@ -16,5 +16,5 @@ document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], 
 const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', toBedStatus);
 function toBedStatus() {
-    window.location="https://yunqi0102.000webhostapp.com/Ward/";
+    window.location="https://yunqi0102.000webhostapp.com/WardOverview/";
 }

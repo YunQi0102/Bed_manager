@@ -9,12 +9,8 @@ function current_time() {
     setTimeout('current_time()',1000);
 }
 
-var Today = new Date();
-document.querySelector(".update_date").innerHTML = Today.toLocaleDateString([], { month: "2-digit", day: "2-digit" });
-document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit"});
-
 const clickbtn = document.querySelector(".btn");
-clickbtn.addEventListener('click', toBedStatus);
-function toBedStatus() {
-    window.location="https://yunqi0102.000webhostapp.com/WardOverview/";
+clickbtn.addEventListener('click', LogIn);
+function LogIn() {
+    alert("登入成功!");
 }

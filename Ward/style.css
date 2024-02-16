@@ -45,9 +45,9 @@ header h1 {
 .subtitle {
     float: right;
     font-size: 26px;
-    font-weight: bold;
-    letter-spacing: 10px;
-    margin: 8px 25px 0px;
+    font-weight: normal;
+    letter-spacing: 8px;
+    margin: 5px 25px 0px;
 }
 
 /* navbar */
@@ -131,7 +131,7 @@ main .bed, main .empty_bed {
 
 main h2 {
     text-align: center;
-    letter-spacing: 1.5px;
+    letter-spacing: 3px;
     margin: 0px;
     width: 360px;
     padding: 10px 0px;
@@ -140,11 +140,11 @@ main h2 {
 }
 
 .male {
-    background-color: rgb(157, 209, 249);
+    background-color: #BBE7FF;
 }
 
 .female {
-    background-color: rgba(249, 157, 197, 0.893);
+    background-color: #FFBBE5;
 }
 
 main h3, main div td {
@@ -193,11 +193,11 @@ main .chem {
 
 /* 空床 */
 .empty_bed .female, .empty_bed .male {
-    background-color: rgba(153, 153, 153, 0.893);
+    background-color: rgba(195, 195, 195, 0.893);
 }
 
 .empty_bed {
-    background-color: #dddddd;
+    background-color: #ffffff;
 }
 
 .empty_bed div {
