@@ -47,7 +47,7 @@ header h1 {
     font-size: 26px;
     font-weight: normal;
     letter-spacing: 3px;
-    margin: 4px 25px 0px;
+    margin: 2px 25px 0px;
 }
 
 /* main */
@@ -104,7 +104,7 @@ td {
 .remark {
     border: 0;
     border-bottom: 1.5px #4479a1 solid;
-    font-size: 14px;
+    width: auto;
 }
 
 /*.register_datetime {*/

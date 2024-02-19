@@ -8,9 +8,3 @@ function current_time() {
     document.querySelector(".current_time").innerHTML = Today.getFullYear() + "年" + (Today.getMonth()+1) +  "月" + Today.getDate() + "日" + " 星期" + day_list[Today.getDay()] + " " + Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" });
     setTimeout('current_time()',1000);
 }
-
-const clickbtn = document.querySelector(".btn");
-clickbtn.addEventListener('click', LogIn);
-function LogIn() {
-    alert("登入成功!");
-}

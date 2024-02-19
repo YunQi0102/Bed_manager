@@ -1,28 +1,3 @@
-<?php
-    // 資料庫連線
-    require_once('../connect.php');
-    
-    // 從表單獲取資料
-    $medical_record_id = $_POST['medical_record_id'];
-    $department = $_POST['department'];
-    $sourse = $_POST['sourse'];
-    
-    if (empty($_POST['medical_record_id']) || empty($_POST['department']) || empty($_POST['sourse'])) {
-        echo "<script>alert('資料有缺漏，請填寫完整。'); history.back();</script>";
-        exit(); // 終止程序
-    }
-    
-    // 從資料庫查詢資料
-    $sql = "SELECT * FROM patient WHERE (medical_record_id = ".$medical_record_id.")";
-    $retval = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($retval, MYSQLI_NUM);
-    
-    date_default_timezone_set('Asia/Taipei');
-    $current = date("Y-m-d H:i:s");
-    
-    if($row) {
-?>
-
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -42,7 +17,7 @@
 <main>
     <nav>
         <ul>
-            <li><a href="https://yunqi0102.000webhostapp.com/Home.html" style="padding-top: 10px;">
+            <li><a href="https://yunqi0102.000webhostapp.com/Home.php" style="padding-top: 10px;">
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
             <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
@@ -186,15 +161,3 @@
 <script src="Fscript.js"></script>
 </body>
 </html>
-
-<?php
-    } else {
-        echo "<script>alert('索引號填寫錯誤，請重新確認！'); history.back();</script>";
-        exit();
-    }
-    
-    // 釋放結果集
-    mysqli_free_result($retval);
-    // 中斷連接資料庫
-    $conn->close();
-?>

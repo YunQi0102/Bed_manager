@@ -17,7 +17,7 @@
 <main>
     <nav>
         <ul>
-            <li><a href="https://yunqi0102.000webhostapp.com/Home.php" style="padding-top: 10px;">
+            <li><a href="https://yunqi0102.000webhostapp.com/Home.html" style="padding-top: 10px;">
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
             <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
