@@ -2,7 +2,8 @@
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
-    <title>輔大醫院-床位管理系統（待床清單）</title>
+    <title>床位管理系統-待床清單</title>
+    <link rel="icon" href="../img/FJUH_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>

@@ -13,7 +13,7 @@
     }
     
     // 從資料庫查詢資料
-    $sql = "SELECT * FROM patient WHERE (medical_record_id = ".$medical_record_id.")";
+    $sql = "SELECT * FROM patient WHERE (medical_record_id = '$medical_record_id')";
     $retval = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($retval, MYSQLI_NUM);
     
@@ -27,7 +27,8 @@
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
-    <title>輔大醫院-床位管理系統（住院登記）</title>
+    <title>床位管理系統-住院登記</title>
+    <link rel="icon" href="../img/FJUH_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="Fstyle.css">
 </head>
 <body>
@@ -59,11 +60,11 @@
     <p>基本資料</p>
     <table>
         <tr>
-            <td style="width: 30%;">索引號：
+            <td style="width: 35%;">索引號：
                 <input type="number" name="medical_record_id" class="insert" readonly=true 
                     value="<?php echo "{$medical_record_id}"; ?>">
             </td>
-            <td>病患來源：
+            <td style="width: 35%;">病患來源：
                 <input type="text" name="sourse" class="insert" readonly=true 
                     value="<?php echo "{$sourse}"; ?>">
             </td>
@@ -170,13 +171,11 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3">隔離註記：
-                <input type="text" name="isolation_note" class="input remark" size="109" autocomplete="off">
+            <td>隔離註記：
+                <textarea name="isolation_note" class="input remark_iso" rows="3" autocomplete="off"></textarea>
             </td>
-        </tr>
-        <tr>
-            <td colspan="3">備註：
-                <input type="text" name="note" class="input remark" size="113" autocomplete="off">
+            <td colspan="2">備註：
+                <textarea name="note" class="input remark" rows="3" autocomplete="off"></textarea>
             </td>
         </tr>
     </table>

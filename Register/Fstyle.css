@@ -101,10 +101,22 @@ td {
     cursor: default;
 }
 
+.remark_iso {
+    border: 1.5px #4479a1 solid;
+    border-radius: 5px;
+    width: 255px;
+    margin-top: 5px;
+    resize: none;
+    vertical-align: middle;
+}
+
 .remark {
-    border: 0;
-    border-bottom: 1.5px #4479a1 solid;
-    width: auto;
+    border: 1.5px #4479a1 solid;
+    border-radius: 5px;
+    width: 610px;
+    margin-top: 5px;
+    resize: none;
+    vertical-align: middle;
 }
 
 /*.register_datetime {*/

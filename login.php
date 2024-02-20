@@ -10,7 +10,7 @@
         exit(); // 終止程序
     }
     
-    $sql = "SELECT * FROM login WHERE (account = '".$account."' AND password = '".$password."')";
+    $sql = "SELECT * FROM login WHERE (account = '$account' AND password = '$password')";
     $retval = mysqli_query($conn, $sql);
     $row = mysqli_num_rows($retval);  
 
