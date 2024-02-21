@@ -117,7 +117,7 @@ main .status {
     margin: 5px 5px;
 }
 
-main .bed, main .empty_bed {
+main .bed, main .empty_bed, main .disable_bed {
     float: left;
     width: 360px;
     height: 250px;
@@ -191,8 +191,8 @@ main .chem {
     border-color: rgb(0, 181, 217);
 }
 
-/* 空床 */
-.empty_bed .female, .empty_bed .male {
+/* 空床、未開放床 */
+.empty_bed h2, .disable_bed h2 {
     background-color: rgba(195, 195, 195, 0.893);
 }
 
@@ -200,11 +200,15 @@ main .chem {
     background-color: #ffffff;
 }
 
+.disable_bed {
+    background-color: #efefef;
+}
+
 .empty_bed div {
     padding: 0px;
 }
 
-.empty_bed h3 {
+.empty_bed h3, .disable_bed h3 {
     text-align: center;
     font-size: 25px;
     padding: 90px 0px 0px;
