@@ -13,8 +13,14 @@ var Today = new Date();
 document.querySelector(".update_date").innerHTML = Today.toLocaleDateString([], { month: "2-digit", day: "2-digit" });
 document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], { hour12: false, hour: "2-digit", minute: "2-digit"});
 
-const clickbtn = document.querySelector(".btn1");
-clickbtn.addEventListener('click', toBedStatus);
-function toBedStatus() {
-    window.location="https://yunqi0102.000webhostapp.com/Ward/";
+const clickbtn1 = document.querySelector(".btn1");
+clickbtn1.addEventListener('click', toWard1);
+function toWard1() {
+    window.location="http://localhost/Ward/13B01.html";
+}
+
+const clickbtn3 = document.querySelector(".btn3");
+clickbtn3.addEventListener('click', toWard3);
+function toWard3() {
+    window.location="http://localhost/Ward/13B03.html";
 }

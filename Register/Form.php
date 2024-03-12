@@ -13,12 +13,12 @@
     }
     
     // 從資料庫查詢資料
-    $sql = "SELECT * FROM patient WHERE (medical_record_id = '$medical_record_id')";
+    $sql = "SELECT * FROM patients WHERE (medical_record_id = '$medical_record_id')";
     $retval = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_array($retval, MYSQLI_NUM);
+    $row = mysqli_fetch_array($retval);
     
-    date_default_timezone_set('Asia/Taipei');
-    $current = date("Y-m-d H:i:s");
+    // date_default_timezone_set('Asia/Taipei');
+    // $current = date("Y-m-d H:i:s");
     
     if($row) {
 ?>
@@ -43,17 +43,17 @@
 <main>
     <nav>
         <ul>
-            <li><a href="https://yunqi0102.000webhostapp.com/Home.html" style="padding-top: 10px;">
+            <li><a href="http://localhost/Home.html" style="padding-top: 10px;">
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
             <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
-            <li><a href="https://yunqi0102.000webhostapp.com/Register/">
+            <li><a href="http://localhost/Register/">
                 <img src="..\img\LOGO_register.png" width="33px" class="first_img"><img src="..\img\LOGO_register2.png" width="33px" class="second_img"><br><br>登記</a></li>
-            <li><a href="https://yunqi0102.000webhostapp.com/FloorSelect/">
+            <li><a href="http://localhost/FloorSelect/">
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
-            <li><a href="https://yunqi0102.000webhostapp.com/Patient/index.php">
+            <li><a href="http://localhost/Patient/index.php">
                 <img src="..\img\LOGO_patient.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_patient2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>名單</a></li>
-            <p>最後更新<br><span class="update_date"></span><br><span class="update_time"></span></p>
+            <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
     <form class="out" action="insert.php" method="post">
@@ -76,21 +76,21 @@
         <tr>
             <td>病患姓名：
                 <input type="text" name="patient_name" class="insert" readonly=true 
-                    value="<?php echo "{$row[1]}"; ?>">
+                    value="<?php echo "{$row['name']}"; ?>">
             </td>
             <td>性別：
                 <input type="text" name="gender" class="insert" readonly=true 
-                    value="<?php echo "{$row[2]}"; ?>">
+                    value="<?php if($row['gender'] == 1) { echo "男"; } else { echo "女"; } ?>">
             </td>
             <td>身份：
                 <input type="text" name="identity" class="insert" readonly=true 
-                    value="<?php echo "{$row[3]}"; ?>">
+                    value="<?php echo "{$row['identity']}"; ?>">
             </td>
         </tr>
         <tr>
             <td>就診號：
                 <input type="number" name="clinic_number" class="insert" readonly=true 
-                    value="<?php echo "{$row[4]}"; ?>">
+                    value="<?php echo "{$row['clinic_number']}"; ?>">
             </td>
             <!--<td>登記日期/時間：-->
                 <!--<input type="datetime" name="register_datetime" class="insert" readonly=true-->
@@ -99,7 +99,7 @@
             <!--</td>-->
             <td>簽證醫師：
                 <input type="text" name="visa_doctor" class="insert" readonly=true 
-                    value="<?php echo "{$row[5]}"; ?>">
+                    value="<?php echo "{$row['doctor']}"; ?>">
             </td>
             <td>隔離與否：
                 <input type="radio" name="isolation" id="isolate_yes" value="是">

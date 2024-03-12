@@ -18,15 +18,15 @@
 <main>
     <nav>
         <ul>
-            <li><a href="https://yunqi0102.000webhostapp.com/Home.html" style="padding-top: 10px;">
+            <li><a href="http://localhost/Home.html" style="padding-top: 10px;">
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
             <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
-            <li><a href="https://yunqi0102.000webhostapp.com/Register/">
+            <li><a href="http://localhost/Register/">
                 <img src="..\img\LOGO_register.png" width="33px" class="first_img"><img src="..\img\LOGO_register2.png" width="33px" class="second_img"><br><br>登記</a></li>
-            <li><a href="https://yunqi0102.000webhostapp.com/FloorSelect/">
+            <li><a href="http://localhost/FloorSelect/">
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
-            <li><a href="https://yunqi0102.000webhostapp.com/Patient/index.php">
+            <li><a href="http://localhost/Patient/index.php">
                 <img src="..\img\LOGO_patient.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_patient2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>名單</a></li>
             <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>

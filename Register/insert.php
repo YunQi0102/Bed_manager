@@ -34,7 +34,7 @@
     $sql = "INSERT INTO form (medical_record_id, department, sourse, patient_name, gender, identity, clinic_number, visa_doctor, telephone_number, phone_number, reserve_date, isolation, reserve_days, isolation_note, priorities, discharged_date, operation, chemotherapy, severely_injured, ICU, public_bed, note) VALUES ('$medical_record_id','$department','$sourse','$patient_name','$gender','$identity','$clinic_number','$visa_doctor','$telephone_number','$phone_number','$reserve_date','$isolation','$reserve_days','$isolation_note','$priorities','$discharged_date','$operation','$chemotherapy','$severely_injured','$ICU','$public_bed','$note')";
     
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('登記成功'); location.href='https://yunqi0102.000webhostapp.com/Home.html';</script>";
+        echo "<script>alert('登記成功'); location.href='http://localhost/Home.html';</script>";
     } else {
         echo "<script>alert('登記失敗');</script>" . $conn->error;
     }
