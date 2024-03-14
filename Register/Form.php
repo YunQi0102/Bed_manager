@@ -7,19 +7,27 @@
     $department = $_POST['department'];
     $sourse = $_POST['sourse'];
     
-    if (empty($_POST['medical_record_id']) || empty($_POST['department']) || empty($_POST['sourse'])) {
+    if(empty($_POST['medical_record_id']) || empty($_POST['department']) || empty($_POST['sourse'])) {
         echo "<script>alert('資料有缺漏，請填寫完整。'); history.back();</script>";
         exit(); // 終止程序
     }
+
+    $db_check = "SELECT * FROM form WHERE (medical_record_id = '$medical_record_id')";
+    $check_result = mysqli_query($conn, $db_check);
+    $form_row = mysqli_fetch_array($check_result);
     
+    if($form_row) {
+        if($_POST['medical_record_id'] == $form_row['medical_record_id']) {
+            echo "<script>alert('此病人已登記過，請重新確認索引號。'); history.back();</script>";
+            exit(); // 終止程序
+        }
+    }
+
     // 從資料庫查詢資料
     $sql = "SELECT * FROM patients WHERE (medical_record_id = '$medical_record_id')";
     $retval = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($retval);
-    
-    // date_default_timezone_set('Asia/Taipei');
-    // $current = date("Y-m-d H:i:s");
-    
+
     if($row) {
 ?>
 
@@ -62,21 +70,21 @@
         <tr>
             <td style="width: 35%;">索引號：
                 <input type="number" name="medical_record_id" class="insert" readonly=true 
-                    value="<?php echo "{$medical_record_id}"; ?>">
+                    value="<?php echo $medical_record_id; ?>">
             </td>
             <td style="width: 35%;">病患來源：
                 <input type="text" name="sourse" class="insert" readonly=true 
-                    value="<?php echo "{$sourse}"; ?>">
+                    value="<?php echo $sourse; ?>">
             </td>
             <td style="width: 30%;">科別：
                 <input type="text" name="department" class="insert" readonly=true 
-                    value="<?php echo "{$department}"; ?>">
+                    value="<?php echo $department; ?>">
             </td>
         </tr>
         <tr>
             <td>病患姓名：
                 <input type="text" name="patient_name" class="insert" readonly=true 
-                    value="<?php echo "{$row['name']}"; ?>">
+                    value="<?php echo $row['name']; ?>">
             </td>
             <td>性別：
                 <input type="text" name="gender" class="insert" readonly=true 
@@ -84,27 +92,22 @@
             </td>
             <td>身份：
                 <input type="text" name="identity" class="insert" readonly=true 
-                    value="<?php echo "{$row['identity']}"; ?>">
+                    value="<?php echo $row['identity']; ?>">
             </td>
         </tr>
         <tr>
             <td>就診號：
                 <input type="number" name="clinic_number" class="insert" readonly=true 
-                    value="<?php echo "{$row['clinic_number']}"; ?>">
+                    value="<?php echo $row['clinic_number']; ?>">
             </td>
-            <!--<td>登記日期/時間：-->
-                <!--<input type="datetime" name="register_datetime" class="insert" readonly=true-->
-                <!--    value="<?php echo $current; ?>">-->
-            <!--    <span class="insert"><?php echo $current; ?></span>-->
-            <!--</td>-->
             <td>簽證醫師：
                 <input type="text" name="visa_doctor" class="insert" readonly=true 
-                    value="<?php echo "{$row['doctor']}"; ?>">
+                    value="<?php echo $row['doctor']; ?>">
             </td>
             <td>隔離與否：
                 <input type="radio" name="isolation" id="isolate_yes" value="是">
                 <label for="isolate_yes">是</label>
-                <input type="radio" name="isolation" id="isolate_no" value="否">
+                <input type="radio" name="isolation" id="isolate_no" value="否" checked="true">
                 <label for="isolate_no">否</label>
             </td>
         </tr>
@@ -114,7 +117,6 @@
             </td>
             <td>預約日期：
                 <input type="date" name="reserve_date" class="input" style="width: 120px;">
-                <!--<input type="time" name="reserve_time" class="input" style="width: 115px;">-->
             </td>
             <td>離院日期：
                 <input type="date" name="discharged_date" class="input" style="width: 110px;">
@@ -131,7 +133,7 @@
         <tr>
             <td>優先順序：
                 <select class="input" name="priorities">
-                    <option>請選擇順序</option>
+                    <option disabled selected>請選擇順序</option>
                     <option>VIP</option>
                     <option>開刀</option>
                     <option>化療</option>
@@ -140,13 +142,13 @@
             <td>重大傷病：
                 <input type="radio" name="severely_injured" id="severe_yes" value="是">
                 <label for="severe_yes">是</label>
-                <input type="radio" name="severely_injured" id="severe_no" value="否">
+                <input type="radio" name="severely_injured" id="severe_no" value="否" checked="true">
                 <label for="severe_no">否</label>
             </td>
             <td>簽住公床：
                 <input type="radio" name="public_bed" id="public_yes" value="是">
                 <label for="public_yes">是</label>
-                <input type="radio" name="public_bed" id="public_no" value="否">
+                <input type="radio" name="public_bed" id="public_no" value="否" checked="true">
                 <label for="public_no">否</label>
             </td>
         </tr>
@@ -154,19 +156,19 @@
             <td>手術住院：
                 <input type="radio" name="operation" id="surgery_yes" value="是">
                 <label for="surgery_yes">是</label>
-                <input type="radio" name="operation" id="surgery_no" value="否">
+                <input type="radio" name="operation" id="surgery_no" value="否" checked="true">
                 <label for="surgery_no">否</label>
             </td>
             <td>化療住院：
                 <input type="radio" name="chemotherapy" id="chemotherapy_yes" value="是">
                 <label for="chemotherapy_yes">是</label>
-                <input type="radio" name="chemotherapy" id="chemotherapy_no" value="否">
+                <input type="radio" name="chemotherapy" id="chemotherapy_no" value="否" checked="true">
                 <label for="chemotherapy_no">否</label>
             </td>
             <td>加護病房：
                 <input type="radio" name="ICU" id="intensive_care_yes" value="是">
                 <label for="intensive_care_yes">是</label>
-                <input type="radio" name="ICU" id="intensive_care_no" value="否">
+                <input type="radio" name="ICU" id="intensive_care_no" value="否" checked="true">
                 <label for="intensive_care_no">否</label>
             </td>
         </tr>
@@ -194,6 +196,7 @@
     
     // 釋放結果集
     mysqli_free_result($retval);
+    
     // 中斷連接資料庫
     $conn->close();
 ?>
