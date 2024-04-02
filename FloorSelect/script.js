@@ -16,5 +16,5 @@ document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], 
 const clickbtn = document.querySelector(".btn");
 clickbtn.addEventListener('click', toBedStatus);
 function toBedStatus() {
-    window.location="http://localhost/WardOverview/";
+    window.location="http://localhost/WardOverview/index.php";
 }
