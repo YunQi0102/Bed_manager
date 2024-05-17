@@ -12,13 +12,13 @@ function current_time() {
 const clickbtn2 = document.querySelector(".two");
 clickbtn2.addEventListener('click', toRegister);
 function toRegister() {
-    window.location="http://localhost/Register/";
+    window.location="http://localhost/Register/index.php";
 }
 
 const clickbtn3 = document.querySelector(".three");
 clickbtn3.addEventListener('click', toFloorSelect);
 function toFloorSelect() {
-    window.location="http://localhost/FloorSelect/";
+    window.location="http://localhost/FloorSelect/index.php";
 }
 
 const clickbtn4 = document.querySelector(".four");

@@ -5,6 +5,11 @@
     <title>床位管理系統-待床清單</title>
     <link rel="icon" href="../img/FJUH_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script>
+        function openEmptyBed() {
+            window.open('http://localhost/EmptyBedOverview/index.html', 'emptyBedWindow', 'width=800,height=400,left=350,top=140');
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -22,9 +27,9 @@
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
             <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
-            <li><a href="http://localhost/Register/">
+            <li><a href="http://localhost/Register/index.php">
                 <img src="..\img\LOGO_register.png" width="33px" class="first_img"><img src="..\img\LOGO_register2.png" width="33px" class="second_img"><br><br>登記</a></li>
-            <li><a href="http://localhost/FloorSelect/">
+            <li><a href="http://localhost/FloorSelect/index.php">
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
             <li><a href="http://localhost/Patient/index.php">
                 <img src="..\img\LOGO_patient.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_patient2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>名單</a></li>
@@ -42,8 +47,9 @@
         // 檢查是否有資料
         if ($result->num_rows > 0) {
             echo "<table>
-                <tr>
+                <tr class="."tr_one".">
                     <th>No.</th>
+                    <th>入床</th>
                     <th>病歷號</th>
                     <th>科別</th>
                     <th>來源</th>
@@ -57,7 +63,6 @@
                     <th>優先順序</th>
                     <th>登記住院日</th>
                     <th>登記出院日</th>
-                    <th>登記天數</th>
                     <th>手術</th>
                     <th>化療</th>
                     <th>重傷</th>
@@ -70,6 +75,7 @@
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
                         <td>".$row["form_id"]."</td>
+                        <td>"."<a href="."#"." onclick="."openEmptyBed(); return false;".">選擇床位</a></td>
                         <td>".$row["medical_record_id"]."</td>
                         <td>".$row["department"]."</td>
                         <td>".$row["sourse"]."</td>
@@ -83,7 +89,6 @@
                         <td>".$row["priorities"]."</td>
                         <td>".$row["reserve_date"]."</td>
                         <td>".$row["discharged_date"]."</td>
-                        <td>".$row["reserve_days"]."</td>
                         <td>".$row["operation"]."</td>
                         <td>".$row["chemotherapy"]."</td>
                         <td>".$row["severely_injured"]."</td>

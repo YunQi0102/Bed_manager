@@ -51,13 +51,13 @@
 <main>
     <nav>
         <ul>
-            <li><a href="http://localhost/Home.html" style="padding-top: 10px;">
+            <li><a href="http://localhost/Home_doctor.html" style="padding-top: 10px;">
                 <img src="..\img\LOGO_home.png" width="33px" class="first_img"><img src="..\img\LOGO_home2.png" width="33px" class="second_img"><br><br>首頁</a></li>
             <li><a href="#">
                 <img src="..\img\LOGO_dashboard.png" width="30px" class="first_img" style="top: 134px; left: 23px;"><img src="..\img\LOGO_dashboard2.png" width="30px" class="second_img" style="top: 134px; left: 23px;"><br><br>儀表板</a></li>
-            <li><a href="http://localhost/Register/">
+            <li><a href="http://localhost/Register/index.php">
                 <img src="..\img\LOGO_register.png" width="33px" class="first_img"><img src="..\img\LOGO_register2.png" width="33px" class="second_img"><br><br>登記</a></li>
-            <li><a href="http://localhost/FloorSelect/">
+            <li><a href="http://localhost/FloorSelect/index.php">
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
             <li><a href="http://localhost/Patient/index.php">
                 <img src="..\img\LOGO_patient.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_patient2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>名單</a></li>
@@ -104,33 +104,14 @@
                 <input type="text" name="visa_doctor" class="insert" readonly=true 
                     value="<?php echo $row['doctor']; ?>">
             </td>
-            <td>隔離與否：
-                <input type="radio" name="isolation" id="isolate_yes" value="是">
-                <label for="isolate_yes">是</label>
-                <input type="radio" name="isolation" id="isolate_no" value="否" checked="true">
-                <label for="isolate_no">否</label>
-            </td>
         </tr>
         <tr>
             <td>連絡電話：
-                <input type="tel" name="telephone_number" class="input" maxlength="10" autocomplete="off" placeholder="例：27451542">
+                <input type="tel" name="telephone_number" class="input" maxlength="10" autocomplete="off" value="<?php echo $row['telephone_number']; ?>">
             </td>
-            <td>預約日期：
+            <td>登記住院日：
                 <input type="date" name="reserve_date" class="input" style="width: 120px;">
             </td>
-            <td>離院日期：
-                <input type="date" name="discharged_date" class="input" style="width: 110px;">
-            </td>
-        </tr>
-        <tr>
-            <td>手機號碼：
-                <input type="tel" name="phone_number" class="input" maxlength="10" autocomplete="off" placeholder="例：0912345678">
-            </td>
-            <td>預約住院天數：
-                <input type="number" name="reserve_days" class="input" min="1" value=null>
-            </td>
-        </tr>
-        <tr>
             <td>優先順序：
                 <select class="input" name="priorities">
                     <option disabled selected>請選擇順序</option>
@@ -139,20 +120,42 @@
                     <option>化療</option>
                 </select>
             </td>
+        </tr>
+        <tr>
+            <td>手機號碼：
+                <input type="tel" name="phone_number" class="input" maxlength="10" autocomplete="off" value="<?php echo $row['phone_number']; ?>">
+            </td>
+            <td>登記出院日：
+                <input type="date" name="discharged_date" class="input" style="width: 110px;">
+            </td>
+        </tr>
+        <tr>
+            <td>隔離與否：
+                <input type="radio" name="isolation" id="isolate_yes" value="是">
+                <label for="isolate_yes">是</label>
+                <input type="radio" name="isolation" id="isolate_no" value="否" checked="true">
+                <label for="isolate_no">否</label>
+            </td>
             <td>重大傷病：
                 <input type="radio" name="severely_injured" id="severe_yes" value="是">
                 <label for="severe_yes">是</label>
                 <input type="radio" name="severely_injured" id="severe_no" value="否" checked="true">
                 <label for="severe_no">否</label>
             </td>
+            <td>加護病房：
+                <input type="radio" name="ICU" id="intensive_care_yes" value="是">
+                <label for="intensive_care_yes">是</label>
+                <input type="radio" name="ICU" id="intensive_care_no" value="否" checked="true">
+                <label for="intensive_care_no">否</label>
+            </td>
+        </tr>
+        <tr>
             <td>簽住公床：
                 <input type="radio" name="public_bed" id="public_yes" value="是">
                 <label for="public_yes">是</label>
                 <input type="radio" name="public_bed" id="public_no" value="否" checked="true">
                 <label for="public_no">否</label>
             </td>
-        </tr>
-        <tr>
             <td>手術住院：
                 <input type="radio" name="operation" id="surgery_yes" value="是">
                 <label for="surgery_yes">是</label>
@@ -164,12 +167,6 @@
                 <label for="chemotherapy_yes">是</label>
                 <input type="radio" name="chemotherapy" id="chemotherapy_no" value="否" checked="true">
                 <label for="chemotherapy_no">否</label>
-            </td>
-            <td>加護病房：
-                <input type="radio" name="ICU" id="intensive_care_yes" value="是">
-                <label for="intensive_care_yes">是</label>
-                <input type="radio" name="ICU" id="intensive_care_no" value="否" checked="true">
-                <label for="intensive_care_no">否</label>
             </td>
         </tr>
         <tr>

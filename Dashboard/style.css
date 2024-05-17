@@ -1,6 +1,5 @@
 body {
     width: 1200px;
-    overflow-x: hidden;
 }
 
 /* header */
@@ -47,56 +46,21 @@ header h1 {
     float: right;
     font-size: 26px;
     font-weight: normal;
-    letter-spacing: 3px;
-    margin: 2px 25px 0px;
-}
-
-/* main */
-main {
-    display: flex;
-}
-
-table {
-    display: block;
-    width: 0px;
-    height: 490px;
-    margin: 5px;
-    padding: 0px;
-    flex-grow: 1;
-    overflow: scroll;
-    table-layout: fixed;
-}
-
-th {
-    position: sticky;
-    top: 0;
-    background-color: #ffe3ea;
-}
-
-table, th, td {
-    /* border: #004B84 1px solid; */
-    border-collapse: collapse;
-}
-
-th, td {
-    border: #004B84 1.3px solid;
-    padding: 8px;
-    white-space: nowrap;
-}
-
-th.auto-width, td.auto-width {
-    width: auto; /* 讓每欄的寬度自動調整 */
+    letter-spacing: 8px;
+    margin: 5px 25px 0px;
 }
 
 /* navbar */
-nav {
-    width: 60px;
+nav, form {
+    float: left;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 60px;
+    height: 500px;
     background-color: #fffbe4;
     color: #004B84;
     font-weight: 700;
@@ -134,37 +98,13 @@ nav img {
 }
 
 ul p {
-    display: inline-block;
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
     font-size: 12px;
+    text-align: center;
     color: #004B84;
     margin-top: 110px;
+    letter-spacing: 2px;
 }
 
 .update_date, .update_time {
-    color: #004B84;
-    font-weight: bold;
     font-size: 14px;
 }
-
-/* 捲軸 */
-table::-webkit-scrollbar {
-    height: 10px;
-    width: 10px;
-}
-
-table::-webkit-scrollbar-thumb {
-    background-color: #c6eeff;
-    -webkit-border-radius: 10px;
-}
-
-table::-webkit-scrollbar-thumb:hover {
-    background-color: #ace6ff;
-}
-
-/* 捲軸軌道 */
-/* table::-webkit-scrollbar-track {
-    background-color: #fffbe4;
-} */

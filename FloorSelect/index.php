@@ -1,8 +1,27 @@
+<?php
+    session_start();
+
+    // 檢查使用者是否已登入
+    if (!isset($_SESSION['account'])) {
+        // 如果使用者未登入，重定向到登入頁面
+        header("Location: login.php");
+        exit();
+    }
+
+    // 確認使用者的身份
+    if ($_SESSION['identity'] !== "inpatient_center") {
+        // 如果使用者身份不符合要求，重定向到適當的頁面
+        // echo "<script>alert('您無瀏覽此頁面之權限，將為你轉至首頁'); </script>";
+        header("Location: http://localhost/Home_doctor.html");
+        exit();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
-    <title>床位管理系統-床位狀況</title>
+    <title>床位管理系統-樓層選擇</title>
     <link rel="icon" href="../img/FJUH_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,7 +30,7 @@
     <div>
         <img src="..\img\FJUHlogo.jpg" alt="a hospital's logo">
         <h1>輔大醫院-床位管理系統</h1>
-        <h1 class="subtitle">13B01</h1>
+        <h1 class="subtitle">病房狀況查詢</h1>
         <div class="current_time"></div>
     </div>
 </header>
@@ -31,50 +50,32 @@
             <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
-    <div class="status">
-        <div class="bed">
-            <h2 class="male">13B011</h2>
-            <h3>郭宏儒 <span class="dept">神經外科</span></h3>
-            <table>
-                <tr>
-                    <td>主治：許亦晴醫師</td>
-                    <td>病歷號：421542</td>
-                </tr>
-                <tr>
-                    <td>入院日：2024/02/01</td>
-                    <td>身分證：P124720842</td>
-                </tr>
-                <tr>
-                    <td>出院日：2024/06/23</td>
-                    <td>電話：0954154251</td>
-                </tr>
-            </table>
-            <h3 class="note"><span class="surg">手術</span></h3>
-        </div>
-
-        <div class="bed">
-            <h2 class="male">13B012</h2>
-            <h3>張彥霖 <span class="dept">神經外科</span></h3>
-            <table>
-                <tr>
-                    <td>主治：許亦晴醫師</td>
-                    <td>病歷號：125412</td>
-                </tr>
-                <tr>
-                    <td>入院日：2024/03/14</td>
-                    <td>身分證：A137331777</td>
-                </tr>
-                <tr>
-                    <td>出院日：2024/06/04</td>
-                    <td>電話：0954154251</td>
-                </tr>
-            </table>
-            <h3 class="note"><span class="chem">化療</span></h3>
-        </div>
-        <div class="empty_bed">
-            <h2 class="female">13B013</h2>
-            <h3>空床</h3>
-        </div>
+    <div>
+        <button>7A</button>
+        <button>8A</button>
+        <button>8B</button>
+        <button>9A</button>
+        <button>9B</button>
+        <button>10A</button>
+        <button>10B</button>
+        <button>11A</button>
+        <button>11B</button>
+        <button>12A</button>
+        <button>12B</button>
+        <button class="btn">13B</button>
+        <button>15A</button>
+        <button>3A</button>
+        <button>12AG</button>
+        <button>14A</button>
+        <button>SICU</button>
+        <button>MICU</button>
+        <button>NICU </button>
+        <button>NBC</button>
+        <button>PICU</button>
+        <button>BR</button>
+        <button>AII</button>
+        <button>POR</button>
+        <button>TEST</button>
     </div>
 </main>
 <script src="script.js"></script>

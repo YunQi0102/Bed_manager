@@ -77,6 +77,24 @@ button span {
     font-weight: bold;
 }
 
+button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span {
+    padding-right: 25px;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
 .one {
     background-color: white;
     border: 2px #004B84 solid;
@@ -104,29 +122,23 @@ button span {
     margin: 5px 0px 15px;
 }
 
-.one input {
+.one input, .two input, .three input {
     margin-bottom: 20px;
 }
 
-.two input, .three input {
-    margin-bottom: 20px;
+/* 禁按按鈕 */
+#disabled, #disabled span, #disabled input {
+    cursor: not-allowed;
 }
 
-button span:after {
-    content: '»';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
+#disabled {
+    opacity: 0.5;
 }
 
-button:hover span {
-    padding-right: 25px;
+#disabled span:after {
+    content:none;
 }
 
-button:hover span:after {
-    opacity: 1;
-    right: 0;
+#disabled:hover span {
+    padding-right: 0px;
 }
-

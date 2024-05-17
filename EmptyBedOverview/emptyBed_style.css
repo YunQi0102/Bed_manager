@@ -1,0 +1,39 @@
+@media screen and (max-width: 800px) {
+    .empty_bed {
+        float: left;
+        text-align: center;
+        width: 100px;
+        height: 50px;
+        margin: 8px 10px 15px;
+        border: 1px black solid;
+        border-radius: 10px;
+        box-shadow: 3px 5px #b8b8b8;
+        position: relative;
+    }
+}
+
+/* 空床視窗 */
+.empty_bed {
+    float: left;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    margin: 8px 10px 15px;
+    border: 1px black solid;
+    border-radius: 10px;
+    box-shadow: 3px 5px #b8b8b8;
+    position: relative;
+}
+
+.female {
+    background-color: #FFBBE5;
+}
+
+.male {
+    background-color: #BBE7FF;
+}
+
+h2 {
+    margin-top: 12px;
+}
+

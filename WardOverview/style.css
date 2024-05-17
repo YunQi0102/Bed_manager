@@ -99,6 +99,7 @@ button {
     background-color: #d6d6d6;
 } */
 
+/* 一般房 */
 .ward_num {
     width: 90px;
     height: 30px;
@@ -113,6 +114,7 @@ button {
     box-shadow: 2px 3px #b8b8b8;
 }
 
+/* 負壓房 */
 .neg_ward_num {
     width: 90px;
     height: 30px;
