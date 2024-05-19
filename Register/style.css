@@ -47,7 +47,19 @@ header h1 {
     font-size: 26px;
     font-weight: normal;
     letter-spacing: 3px;
-    margin: 2px 25px 0px;
+    margin: 2px 5px 0px;
+}
+
+.logout {
+    float: right;
+    height: 50px;
+    background: none;
+}
+
+.logout img {
+    height: 30px;
+    margin: 10px;
+    margin-left: 5px;
 }
 
 /* navbar */

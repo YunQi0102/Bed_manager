@@ -9,20 +9,26 @@ function current_time() {
     setTimeout('current_time()',1000);
 }
 
+const clickbtn1 = document.querySelector(".one");
+clickbtn1.addEventListener('click', toDashboard);
+function toDashboard() {
+    window.location="http://localhost/Dashboard/Index.php";
+}
+
 const clickbtn2 = document.querySelector(".two");
 clickbtn2.addEventListener('click', toRegister);
 function toRegister() {
-    window.location="http://localhost/Register/index.php";
+    window.location="http://localhost/Register/Index.php";
 }
 
 const clickbtn3 = document.querySelector(".three");
 clickbtn3.addEventListener('click', toFloorSelect);
 function toFloorSelect() {
-    window.location="http://localhost/FloorSelect/index.php";
+    window.location="http://localhost/FloorSelect/Index.php";
 }
 
 const clickbtn4 = document.querySelector(".four");
 clickbtn4.addEventListener('click', toPatientList);
 function toPatientList() {
-    window.location="http://localhost/Patient/index.php";
+    window.location="http://localhost/Patient/Index.php";
 }

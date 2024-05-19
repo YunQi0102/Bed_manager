@@ -16,11 +16,11 @@ document.querySelector(".update_time").innerHTML = Today.toLocaleTimeString([], 
 const clickbtn1 = document.querySelector(".btn1");
 clickbtn1.addEventListener('click', toWard1);
 function toWard1() {
-    window.location="http://localhost/Ward/13B01.html";
+    window.location="http://localhost/Ward/13B01.php";
 }
 
 const clickbtn3 = document.querySelector(".btn3");
 clickbtn3.addEventListener('click', toWard3);
 function toWard3() {
-    window.location="http://localhost/Ward/13B03.html";
+    window.location="http://localhost/Ward/13B03.php";
 }
