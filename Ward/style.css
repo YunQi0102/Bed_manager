@@ -113,8 +113,17 @@ ul p {
     font-size: 12px;
     text-align: center;
     color: #004B84;
-    margin-top: 110px;
+    margin-top: 30px;
+    margin-left: 3px;
     letter-spacing: 2px;
+}
+
+.user {
+    font-size: 14px;
+    text-align: center;
+    color: #004B84;
+    margin-top: 35px;
+    letter-spacing: 1px;
 }
 
 .update_date, .update_time {
@@ -165,12 +174,13 @@ main h3, main div td {
 }
 
 main h3 {
-    padding: 20px 10px 5px 20px;
+    padding: 20px 10px 3px 20px;
 }
 
 .dept {
     border: 1px black solid;
     padding: 5px;
+    margin-left: 5px;
     border-radius: 5px;
 }
 
@@ -182,14 +192,15 @@ table {
 table, td {
     /* border: #004B84 1px solid; */
     border-collapse: collapse;
-    padding: 10px;
+    padding: 10px 0px;
+    padding-left: 10px;
 }
 
 main .note {
-    padding: 10px 10px 5px 20px;
+    padding: 8px 10px 5px 20px;
 }
 
-main .surg, main .chem {
+/* main .surg, main .chem {
     border: 2.5px black solid;
     padding: 5px;
     border-radius: 5px;
@@ -201,7 +212,7 @@ main .surg {
 
 main .chem {
     border-color: rgb(0, 181, 217);
-}
+} */
 
 /* 空床、未開放床 */
 .empty_bed h2, .disable_bed h2 {

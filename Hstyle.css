@@ -43,6 +43,14 @@ header h1 {
     letter-spacing: 2px
 }
 
+.welcome {
+    float: right;
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 3px 10px 0px 10px;
+}
+
 .subtitle {
     float: right;
     font-size: 26px;

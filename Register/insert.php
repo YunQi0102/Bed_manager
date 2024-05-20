@@ -38,6 +38,5 @@
     // 釋放結果集
     mysqli_free_result($result);
 
-    // 中斷連接資料庫
     $conn->close();
 ?>

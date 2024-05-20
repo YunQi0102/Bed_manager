@@ -111,17 +111,25 @@ nav img {
 
 ul p {
     font-size: 12px;
-    font-weight: bold;
-    color: #004B84;
-    margin-top: 110px;
     text-align: center;
+    color: #004B84;
+    margin-top: 30px;
+    margin-left: 3px;
     letter-spacing: 2px;
 }
 
-.update_date, .update_time {
+.user {
     font-size: 14px;
-    font-weight: bold;
+    text-align: center;
     color: #004B84;
+    margin-top: 35px;
+    letter-spacing: 1px;
+}
+
+.update_date, .update_time {
+    color: #004B84;
+    font-weight: bold;
+    font-size: 14px;
 }
 
 /* main */

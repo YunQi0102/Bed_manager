@@ -7,6 +7,18 @@
         header("Location: http://localhost");
         exit();
     }
+
+    $account = $_SESSION['account'];
+    $identity = $_SESSION['identity'];
+
+    // 資料庫連線
+    require_once('..\connect.php');
+
+    $Usql = "SELECT * FROM users WHERE (account = '$account')";
+    $Uretval = mysqli_query($conn, $Usql);
+    $Urow = mysqli_fetch_array($Uretval);
+    
+    if($Urow) {
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +54,11 @@
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
             <li><a href="http://localhost/Patient/Index.php">
                 <img src="..\img\LOGO_patient.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_patient2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>名單</a></li>
+            <p class="user"><u><?php echo $identity; ?><br><?php echo $Urow['user_name'];} ?></u></p>
             <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
-    
+    <?php $conn->close(); ?>
 </main>
 <script src="script.js"></script>
 </body>

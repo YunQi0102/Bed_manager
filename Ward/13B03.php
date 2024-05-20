@@ -14,6 +14,18 @@
         header("Location: http://localhost/Home.php");
         exit();
     }
+
+    $account = $_SESSION['account'];
+    $identity = $_SESSION['identity'];
+
+    // 資料庫連線
+    require_once('..\connect.php');
+
+    $Usql = "SELECT * FROM users WHERE (account = '$account')";
+    $Uretval = mysqli_query($conn, $Usql);
+    $Urow = mysqli_fetch_array($Uretval);
+    
+    if($Urow) {
 ?>
 
 <!DOCTYPE html>
@@ -49,54 +61,70 @@
                 <img src="..\img\LOGO_bed.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_bed2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>病床</a></li>
             <li><a href="http://localhost/Patient/Index.php">
                 <img src="..\img\LOGO_patient.png" width="35px" class="first_img" style="left: 20.5px;"><img src="..\img\LOGO_patient2.png" width="35px" class="second_img" style="left: 20.5px;"><br><br>名單</a></li>
+            <p class="user"><u><?php echo $identity; ?><br><?php echo $Urow['user_name'];} ?></u></p>
             <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
-    <div class="status">
-        <div class="bed">
-            <h2 class="male">13B031</h2>
-            <h3>吳冠廷 <span class="dept">胸腔外科</span></h3>
-            <table>
-                <tr>
-                    <td>主治：張志文醫師</td>
-                    <td>病歷號：153326</td>
-                </tr>
-                <tr>
-                    <td>入院日：2023/01/13</td>
-                    <td>身分證：D160581851</td>
-                </tr>
-                <tr>
-                    <td>出院日：2024/04/02</td>
-                    <td>電話：0951257851</td>
-                </tr>
-            </table>
-            <h3 class="note"><span class="chem">化療</span></h3>
-        </div>
+    <?php 
+        $sql = "SELECT 
+                bed_basic.nursing_station,
+                bed_basic.ward_num,
+                bed_basic.bed_num,
+                bed_basic.usable,
+                bed_basic.medical_record_id,
+                form.department,
+                form.visa_doctor,
+                form.reserve_date,
+                form.discharged_date,
+                form.priorities,
+                patients.name,
+                patients.gender,
+                patients.id_card,
+                patients.phone_number
+                FROM bed_basic
+                LEFT JOIN patients ON bed_basic.medical_record_id = patients.medical_record_id
+                LEFT JOIN form ON patients.medical_record_id = form.medical_record_id
+                WHERE (bed_basic.nursing_station = '13B' AND bed_basic.ward_num = '03')";
+        $retval = mysqli_query($conn, $sql);
 
-        <div class="bed">
-            <h2 class="male">13B032</h2>
-            <h3>張世啟 <span class="dept">一般外科</span></h3>
-            <table>
-                <tr>
-                    <td>主治：張仲宇醫師</td>
-                    <td>病歷號：174512</td>
-                </tr>
-                <tr>
-                    <td>入院日：2024/02/01</td>
-                    <td>身分證：A104492229</td>
-                </tr>
-                <tr>
-                    <td>出院日：2024/03/19</td>
-                    <td>電話：0912642597</td>
-                </tr>
-            </table>
-            <h3 class="note"><span class="surg">手術</span></h3>
-        </div>
-        <div class="disable_bed">
-            <h2>13B033</h2>
-            <h3>未開放床位</h3>
-        </div>
-    </div>
+        if ($retval->num_rows > 0) {
+    ?>
+    <div class="status">
+    <?php 
+            while($row = $retval->fetch_assoc()) {
+
+            $bed_number = $row['nursing_station'].str_pad($row['ward_num'], 2, '0', STR_PAD_LEFT).$row['bed_num'];
+                
+                if ($row['usable']==="0") {
+                    echo '<div class="disable_bed">';
+                    echo '<h2>'.$bed_number.'</h2>';
+                    echo '<h3>未開放床位</h3>';
+                    echo '</div>';
+                } elseif ($row['usable']==="1" && is_null($row['name'])) {
+                    echo '<div class="empty_bed">';
+                    echo '<h2>'.$bed_number.'</h2>';
+                    echo '<h3>空床</h3>';
+                    echo '</div>';
+                } else {
+                    echo '<div class="bed">';
+                    if ($row['gender']==="1") { echo '<h2 class="male">'.$bed_number.'</h2>'; }
+                    elseif ($row['gender']==="0") { echo '<h2 class="female">'.$bed_number.'</h2>'; }
+                    echo '<h3>'.$row['name'].' <span class="dept">'.$row['department'].'</span></h3>';
+                    echo '<table>';
+                    echo '<tr><td><b>主治：</b>'.$row['visa_doctor'].'醫師</td><td><b>病歷號：</b>'.$row['medical_record_id'].'</td></tr>';
+                    echo '<tr><td><b>入院日：</b>'.$row['reserve_date'].'</td><td><b>身分證：</b>'.$row['id_card'].'</td></tr>';
+                    echo '<tr><td><b>出院日：</b>'.$row['discharged_date'].'</td><td><b>電話：</b>'.$row['phone_number'].'</td></tr>';
+                    echo '</table><hr>';
+                    echo '<h3 class="note"># '.$row['priorities'].'</h3>';
+                    echo '</div>';
+                }
+            }
+            echo '</div>';
+        } else {
+            echo "沒有資料";
+        }
+        $conn->close();
+    ?>
 </main>
 <script src="script.js"></script>
 </body>

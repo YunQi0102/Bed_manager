@@ -26,6 +26,7 @@
             echo "<script>alert('帳號或密碼有誤，請重新確認！'); history.back();</script>";
             exit(); // 終止程序
         }
+        $conn->close();
     }
 
     // 處理登入表單提交

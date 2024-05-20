@@ -131,13 +131,6 @@ td {
     vertical-align: middle;
 }
 
-/*.register_datetime {*/
-/*    color: #4479a1;*/
-/*    font-weight: 600;*/
-/*    font-size: 17px;*/
-/*    font-family: serif;*/
-/*}*/
-
 .btn {
     font-size: 18px;
     font-weight: 600;
@@ -207,12 +200,21 @@ nav img {
 
 ul p {
     font-size: 12px;
+    text-align: center;
     color: #004B84;
-    margin-top: 110px;
+    margin-top: 30px;
+    margin-left: 3px;
+    letter-spacing: 2px;
+}
+
+.user {
+    font-size: 14px;
+    text-align: center;
+    color: #004B84;
+    margin-top: 35px;
+    letter-spacing: 1px;
 }
 
 .update_date, .update_time {
-    color: #004B84;
-    font-weight: bold;
     font-size: 14px;
 }
