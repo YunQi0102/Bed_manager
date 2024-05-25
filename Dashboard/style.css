@@ -129,3 +129,23 @@ ul p {
 .update_date, .update_time {
     font-size: 14px;
 }
+
+main div {
+    float: left;
+    width: 1120px;
+    margin: 5px 10px;
+}
+
+/* 圖 */
+#emp_occu_bed, #outp_emerg_count, #wait_gender, #gen_icu {
+    width: 240px;
+}
+
+#department, #vacancy {
+    width: 600px;
+}
+
+.c3-bar {
+    stroke-width: 2px; /* 控制間隔大小 */
+    stroke: #7fe590eb;  /* 顏色可根據需要調整 */
+}

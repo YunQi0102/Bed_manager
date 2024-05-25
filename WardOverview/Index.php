@@ -99,7 +99,7 @@
                             $patient_name = $form_row['patient_name'];
                             $discharged_date = $form_row['discharged_date'];
                             $gender = $form_row['gender'];
-                            if ($gender == "男") {
+                            if ($gender == "男性") {
                                 echo "<button style='background-color: #BBE7FF;'>$patient_name<br>$discharged_date</button>";
                             } else {
                                 echo "<button style='background-color: #FFBBE5;'>$patient_name<br>$discharged_date</button>";

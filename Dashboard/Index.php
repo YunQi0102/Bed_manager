@@ -28,6 +28,9 @@
     <title>床位管理系統-儀表板</title>
     <link rel="icon" href="../img/FJUH_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
 </head>
 <body>
 <header>
@@ -58,8 +61,16 @@
             <p>最後更新<span class="update_date"></span><br><span class="update_time"></span></p>
         </ul>
     </nav>
-    <?php $conn->close(); ?>
+    <div>
+        <div id="emp_occu_bed"></div>
+        <div id="outp_emerg_count"></div>
+        <div id="wait_gender"></div>
+        <div id="gen_icu"></div>
+        <div id="department"></div>
+        <div id="vacancy"></div>
+    </div>
 </main>
 <script src="script.js"></script>
+<script src="chart.js"></script>
 </body>
 </html>

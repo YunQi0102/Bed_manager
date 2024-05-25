@@ -71,41 +71,5 @@
             echo "目前無空床位";
         }
     ?>
-    <!-- <div class="empty_bed male">
-        <h2>13B013</h2>
-    </div>
-    <div class="empty_bed male">
-        <h2>13B021</h2>
-    </div>
-    <div class="empty_bed female">
-        <h2>13B041</h2>
-    </div>
-    <div class="empty_bed male">
-        <h2>13B053</h2>
-    </div>
-    <div class="empty_bed male">
-        <h2>13B063</h2>
-    </div>
-    <div class="empty_bed none">
-        <h2>13B071</h2>
-    </div>
-    <div class="empty_bed none">
-        <h2>13B073</h2>
-    </div>
-    <div class="empty_bed female">
-        <h2>13B083</h2>
-    </div>
-    <div class="empty_bed male">
-        <h2>13B092</h2>
-    </div>
-    <div class="empty_bed male">
-        <h2>13B103</h2>
-    </div>
-    <div class="empty_bed female">
-        <h2>13B113</h2>
-    </div>
-    <div class="empty_bed none">
-        <h2>13Bnp3</h2>
-    </div> -->
 </body>
 </html>

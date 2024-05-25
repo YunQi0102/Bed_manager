@@ -1,31 +1,31 @@
 <?php
-    session_start();
+session_start();
 
-    // 檢查使用者是否已登入
-    if (!isset($_SESSION['account'])) {
-        // 若使用者未登入，定向到登入頁面
-        header("Location: http://localhost");
-        exit();
-    }
+// 檢查使用者是否已登入
+if (!isset($_SESSION['account'])) {
+    // 若使用者未登入，定向到登入頁面
+    header("Location: http://localhost");
+    exit();
+}
 
-    // 確認使用者的身份
-    if ($_SESSION['identity'] !== "住中") {
-        // 若使用者為醫師，因無此頁使用權限只能回到首頁
-        header("Location: http://localhost/Home.php");
-        exit();
-    }
+// 確認使用者的身份
+if ($_SESSION['identity'] !== "住中") {
+    // 若使用者為醫師，因無此頁使用權限只能回到首頁
+    header("Location: http://localhost/Home.php");
+    exit();
+}
 
-    $account = $_SESSION['account'];
-    $identity = $_SESSION['identity'];
+$account = $_SESSION['account'];
+$identity = $_SESSION['identity'];
 
-    // 資料庫連線
-    require_once('..\connect.php');
+// 資料庫連線
+require_once('..\connect.php');
 
-    $Usql = "SELECT * FROM users WHERE (account = '$account')";
-    $Uretval = mysqli_query($conn, $Usql);
-    $Urow = mysqli_fetch_array($Uretval);
-    
-    if($Urow) {
+$Usql = "SELECT * FROM users WHERE (account = '$account')";
+$Uretval = mysqli_query($conn, $Usql);
+$Urow = mysqli_fetch_array($Uretval);
+
+if ($Urow) {
 ?>
 
 <!DOCTYPE html>
@@ -71,43 +71,45 @@
         </ul>
     </nav>
     <?php
-        
         // 擷取資料
-        $sql = "SELECT * FROM form";
+        $sql = "SELECT * FROM list ORDER BY display_order ASC";
         $result = $conn->query($sql);
-        
+
         // 檢查是否有資料
         if ($result->num_rows > 0) {
-            echo "<table>
-                <tr class="."tr_one".">
-                    <th>No.</th>
-                    <th>入床</th>
-                    <th>病歷號</th>
-                    <th>科別</th>
-                    <th>來源</th>
-                    <th>姓名</th>
-                    <th>性別</th>
-                    <th>身份</th>
-                    <th>就診號</th>
-                    <th>醫師</th>
-                    <th>電話</th>
-                    <th>手機</th>
-                    <th>優先順序</th>
-                    <th>登記住院日</th>
-                    <th>登記出院日</th>
-                    <th>手術</th>
-                    <th>化療</th>
-                    <th>重傷</th>
-                    <th>加護</th>
-                    <th>公床</th>
-                    <th>隔離</th>
-                    <th>隔離註記</th>
-                    <th>備註</th>
-                </tr>";
+            echo "<table id='sortable-table'>
+                <thead>
+                    <tr class='tr_one'>
+                        <th>No.</th>
+                        <th>入床</th>
+                        <th>病歷號</th>
+                        <th>科別</th>
+                        <th>來源</th>
+                        <th>姓名</th>
+                        <th>性別</th>
+                        <th>身份</th>
+                        <th>就診號</th>
+                        <th>醫師</th>
+                        <th>電話</th>
+                        <th>手機</th>
+                        <th>優先序</th>
+                        <th>登記住院日</th>
+                        <th>登記出院日</th>
+                        <th>手術</th>
+                        <th>化療</th>
+                        <th>重傷</th>
+                        <th>加護</th>
+                        <th>公床</th>
+                        <th>隔離</th>
+                        <th>隔離註記</th>
+                        <th>備註</th>
+                    </tr>
+                </thead>
+                <tbody>";
             while($row = $result->fetch_assoc()) {
-                echo "<tr>
+                echo "<tr draggable='true'>
                         <td>".$row["form_id"]."</td>
-                        <td>"."<a href="."#"." onclick="."openEmptyBed(); return false;".">選擇床位</a></td>
+                        <td>"."<a href='#' onclick='openEmptyBed(); return false;'>選擇床位</a></td>
                         <td>".$row["medical_record_id"]."</td>
                         <td>".$row["department"]."</td>
                         <td>".$row["sourse"]."</td>
@@ -131,11 +133,10 @@
                         <td>".$row["note"]."</td>
                     </tr>";
             }
-            echo "</table>";
+            echo "</tbody></table>";
         } else {
             echo "0 results";
         }
-        
         $conn->close();
     ?>
 </main>

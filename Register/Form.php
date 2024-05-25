@@ -154,7 +154,7 @@
                 <input type="tel" name="phone_number" class="input" maxlength="10" autocomplete="off" value="<?php echo $row['phone_number']; ?>">
             </td>
             <td>登記出院日：
-                <input type="date" name="discharged_date" class="input" style="width: 110px;">
+                <input type="date" name="discharged_date" class="input" style="width: 120px;">
             </td>
         </tr>
         <tr>
