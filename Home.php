@@ -38,7 +38,7 @@
         <div class="logout">
             <a href="logout.php"><img src="..\img\logout.png"></a>
         </div>
-        <h1 class="welcome"><u><?php echo $row['user_name']; ?></u> (<?php if ($identity==="住中") {echo "C";} else {echo "D";} ?>)</h1>
+        <h1 class="welcome"><u><?php echo $row['user_name']; ?></u>（<?php if ($identity==="住中") {echo "住院中心";} else {echo "醫師";} ?>）</h1>
         <h1 class="subtitle">首頁</h1>
     </div>
 </header>

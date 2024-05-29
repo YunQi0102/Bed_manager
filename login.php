@@ -17,7 +17,7 @@
         $retval = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($retval);
         
-        // 返回 true 表示用戶驗證成功，否則返回 false
+        // 用戶驗證成功返回true
         if ($row) {
             $_SESSION['account'] = $row['account'];
             $_SESSION['identity'] = $row['user_identity'];

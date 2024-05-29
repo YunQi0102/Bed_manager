@@ -116,7 +116,7 @@
             </td>
             <td>性別：
                 <input type="text" name="gender" class="insert" readonly=true 
-                    value="<?php if($row['gender'] == 1) { echo "男"; } else { echo "女"; } ?>">
+                    value="<?php if($row['gender'] == 1) { echo "男性"; } else { echo "女性"; } ?>">
             </td>
             <td>身份：
                 <input type="text" name="identity" class="insert" readonly=true 

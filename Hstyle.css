@@ -152,7 +152,7 @@ button:hover span:after {
 }
 
 #disabled {
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 #disabled span:after {

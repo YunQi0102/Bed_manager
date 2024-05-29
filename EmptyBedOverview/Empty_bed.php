@@ -14,6 +14,12 @@
         header("Location: http://localhost/Home.php");
         exit();
     }
+
+    $medical_record_id = isset($_GET['medical_record_id']) ? $_GET['medical_record_id'] : null;
+
+    if ($medical_record_id === null) {
+        die("未提供病歷號");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +31,8 @@
     <link rel="stylesheet" href="emptyBed_style.css">
 </head>
 <body>
+    <form method="post" action="assign_bed.php">
+    <input type="hidden" name="medical_record_id" value="<?php echo htmlspecialchars($medical_record_id); ?>">
     <?php
         require_once('..\connect.php');
 
@@ -63,7 +71,9 @@
                 }
 
                 echo '<div class="empty_bed '.$gender_class.'">';
-                echo '<h2>'.$bed_number.'</h2>';
+                echo '<label>';
+                echo '<input type="radio" name="bed_number" value="'.$bed_number.'"><span class="bed"> '.$bed_number.'</span>';
+                echo '</label>';
                 echo '</div>';
             }
 
@@ -71,5 +81,9 @@
             echo "目前無空床位";
         }
     ?>
+    <div>
+        <input class="submit" type="submit" value="確認">
+    </div>
+    </form>
 </body>
 </html>

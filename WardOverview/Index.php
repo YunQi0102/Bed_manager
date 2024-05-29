@@ -90,9 +90,9 @@
                 $row = $result->fetch_assoc();
                 $usable = $row['usable'];
                 if ($usable == 1) {     // 床位可用
-                    $form_id = $row['form_id'];
-                    if ($form_id != null) {
-                        $form_query = "SELECT patient_name, discharged_date, gender FROM form WHERE form_id = $form_id";
+                    $medical_record_id = $row['medical_record_id'];
+                    if ($medical_record_id != null) {
+                        $form_query = "SELECT patient_name, discharged_date, gender FROM form WHERE medical_record_id = $medical_record_id";
                         $form_result = $conn->query($form_query);
                         if ($form_result->num_rows > 0) {
                             $form_row = $form_result->fetch_assoc();
@@ -124,7 +124,6 @@
                 $start_index = 0;
                 $end_index = 2;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -139,7 +138,6 @@
                 $start_index = 3;
                 $end_index = 5;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -154,7 +152,6 @@
                 $start_index = 6;
                 $end_index = 8;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -169,7 +166,6 @@
                 $start_index = 9;
                 $end_index = 11;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -184,7 +180,6 @@
                 $start_index = 12;
                 $end_index = 14;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -199,7 +194,6 @@
                 $start_index = 15;
                 $end_index = 17;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -214,7 +208,6 @@
                 $start_index = 18;
                 $end_index = 20;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -230,7 +223,6 @@
                 $start_index = 21;
                 $end_index = 23;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -245,7 +237,6 @@
                 $start_index = 24;
                 $end_index = 26;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -260,7 +251,6 @@
                 $start_index = 27;
                 $end_index = 29;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];
@@ -275,7 +265,6 @@
                 $start_index = 30;
                 $end_index = 32;
                 
-                // 迴圈處理床位資訊
                 for ($i = $start_index; $i <= $end_index; $i++) {
                     $nursing_station = $beds[$i]['nursing_station'];
                     $ward_num = $beds[$i]['ward_num'];

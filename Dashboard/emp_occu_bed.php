@@ -3,7 +3,7 @@
 
     $sql = "SELECT 
             CASE 
-            WHEN form_id IS NULL OR form_id = '' THEN 'Empty' 
+            WHEN medical_record_id IS NULL OR medical_record_id = '' THEN 'Empty' 
             ELSE 'Not Empty' 
             END as form_status, 
             COUNT(*) as total_count 

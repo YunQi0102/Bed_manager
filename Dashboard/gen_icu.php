@@ -3,8 +3,8 @@
 
     $sql = "SELECT 
             CASE 
-            WHEN ICU = '是' THEN '加護'
-            ELSE '一般'
+            WHEN ICU = '否' THEN '一般'
+            ELSE '加護'
             END as icu_status, 
             COUNT(*) as total_count 
             FROM list 

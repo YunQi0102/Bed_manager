@@ -1,31 +1,31 @@
 <?php
-session_start();
+    session_start();
 
-// 檢查使用者是否已登入
-if (!isset($_SESSION['account'])) {
-    // 若使用者未登入，定向到登入頁面
-    header("Location: http://localhost");
-    exit();
-}
+    // 檢查使用者是否已登入
+    if (!isset($_SESSION['account'])) {
+        // 若使用者未登入，定向到登入頁面
+        header("Location: http://localhost");
+        exit();
+    }
 
-// 確認使用者的身份
-if ($_SESSION['identity'] !== "住中") {
-    // 若使用者為醫師，因無此頁使用權限只能回到首頁
-    header("Location: http://localhost/Home.php");
-    exit();
-}
+    // 確認使用者的身份
+    if ($_SESSION['identity'] !== "住中") {
+        // 若使用者為醫師，因無此頁使用權限只能回到首頁
+        header("Location: http://localhost/Home.php");
+        exit();
+    }
 
-$account = $_SESSION['account'];
-$identity = $_SESSION['identity'];
+    $account = $_SESSION['account'];
+    $identity = $_SESSION['identity'];
 
-// 資料庫連線
-require_once('..\connect.php');
+    // 資料庫連線
+    require_once('..\connect.php');
 
-$Usql = "SELECT * FROM users WHERE (account = '$account')";
-$Uretval = mysqli_query($conn, $Usql);
-$Urow = mysqli_fetch_array($Uretval);
+    $Usql = "SELECT * FROM users WHERE (account = '$account')";
+    $Uretval = mysqli_query($conn, $Usql);
+    $Urow = mysqli_fetch_array($Uretval);
 
-if ($Urow) {
+    if ($Urow) {
 ?>
 
 <!DOCTYPE html>
@@ -36,21 +36,24 @@ if ($Urow) {
     <link rel="icon" href="../img/FJUH_icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script>
-        function openEmptyBed() {
-            window.open('http://localhost/EmptyBedOverview/Index.php', 'emptyBedWindow', 'width=800,height=400,left=350,top=140');
+        function openEmptyBed(medicalRecordId) {
+            window.open('http://localhost/EmptyBedOverview/Index.php?medical_record_id=' + medicalRecordId, 'emptyBedWindow', 'width=700,height=360,left=400,top=180');
         }
     </script>
 </head>
 <body>
 <header>
-    <div>
+    <div class="test">
         <img src="..\img\FJUHlogo.jpg" alt="a hospital's logo">
         <h1>輔大醫院-床位管理系統</h1>
         <div class="current_time"></div>
         <div class="logout">
             <a href="..\logout.php"><img src="..\img\logout.png"></a>
         </div>
-        <h1 class="subtitle">待床/控床清單</h1>
+        <h1 class="subtitle">待床/排床清單</h1>
+        <button id="edit-button"><img src="..\img\drag.png" class="edit_btn"></button>
+        <button id="save-button" style="display: none;"><img src="..\img\check.png" class="save_btn"></button>
+        <button id="cancel-button" style="display: none;"><img src="..\img\cancel.png" class="cancel_btn"></button>
     </div>
 </header>
 <main>
@@ -72,7 +75,9 @@ if ($Urow) {
     </nav>
     <?php
         // 擷取資料
-        $sql = "SELECT * FROM list ORDER BY display_order ASC";
+        $sql = "SELECT list.* FROM list 
+                LEFT JOIN bed_basic ON list.medical_record_id = bed_basic.medical_record_id 
+                WHERE bed_basic.medical_record_id IS NULL ORDER BY list.display_order ASC";
         $result = $conn->query($sql);
 
         // 檢查是否有資料
@@ -107,9 +112,9 @@ if ($Urow) {
                 </thead>
                 <tbody>";
             while($row = $result->fetch_assoc()) {
-                echo "<tr draggable='true'>
+                echo "<tr>
                         <td>".$row["form_id"]."</td>
-                        <td>"."<a href='#' onclick='openEmptyBed(); return false;'>選擇床位</a></td>
+                        <td><a href='#' onclick='openEmptyBed(\"".$row["medical_record_id"]."\"); return false;'>選擇床位</a></td>
                         <td>".$row["medical_record_id"]."</td>
                         <td>".$row["department"]."</td>
                         <td>".$row["sourse"]."</td>

@@ -1,8 +1,7 @@
 <?php 
     require_once('..\connect.php');
 
-    $sql = "SELECT 
-            sourse, 
+    $sql = "SELECT sourse, 
             COUNT(*) as total_count 
             FROM list 
             GROUP BY sourse";
@@ -22,3 +21,4 @@
     header('Content-Type: application/json');
     echo json_encode($data);
 ?>
+

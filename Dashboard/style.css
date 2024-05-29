@@ -141,11 +141,26 @@ main div {
     width: 240px;
 }
 
-#department, #vacancy {
-    width: 600px;
+#department, #vacancy, #in_out, .title {
+    width: 520px;
+    display: inline;
 }
 
-.c3-bar {
-    stroke-width: 2px; /* 控制間隔大小 */
-    stroke: #7fe590eb;  /* 顏色可根據需要調整 */
+.pie {
+    width: 1050px;
+    margin: 0px 25px;
+    margin-bottom: 10px;
+}
+
+.title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #004B84;
+    margin: 0px;
+}
+
+.title p {
+    margin: 0px;
+    margin-left: 50px;
 }

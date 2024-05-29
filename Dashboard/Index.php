@@ -62,12 +62,20 @@
         </ul>
     </nav>
     <div>
-        <div id="emp_occu_bed"></div>
-        <div id="outp_emerg_count"></div>
-        <div id="wait_gender"></div>
-        <div id="gen_icu"></div>
-        <div id="department"></div>
-        <div id="vacancy"></div>
+        <div class="pie">
+            <div id="emp_occu_bed"></div>
+            <div id="outp_emerg_count"></div>
+            <div id="wait_gender"></div>
+            <div id="gen_icu"></div>
+        </div>
+        <div class="title">
+            <p>一般/加護病房等待人數</p>
+            <div id="vacancy"></div>
+        </div>
+        <div class="title">
+            <p>住/出院人數</p>
+            <div id="in_out"></div>
+        </div>
     </div>
 </main>
 <script src="script.js"></script>
