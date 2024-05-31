@@ -69,7 +69,7 @@
             <div id="gen_icu"></div>
         </div>
         <div class="title">
-            <p>一般/加護病房等待人數</p>
+            <p>一般/加護病房待床人數</p>
             <div id="vacancy"></div>
         </div>
         <div class="title">

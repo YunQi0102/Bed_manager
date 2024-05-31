@@ -54,7 +54,7 @@
                     echo "disabled id="."disabled";} ?> ><span>床位查詢</span>
                 <input type="image" src="..\img\search.png" width="140px" style="border-radius: 10px;"></button></td>
             <td><button class="four" <?php if ($identity === "醫師") {
-                    echo "disabled id="."disabled";} ?> ><span>待床/控床清單</span>
+                    echo "disabled id="."disabled";} ?> ><span>待床/排床清單</span>
                 <input type="image" src="..\img\list.png" width="100px" style="border-radius: 10px;"></button></td>
         </tr>
     </table>

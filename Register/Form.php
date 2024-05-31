@@ -130,7 +130,7 @@
             </td>
             <td>簽證醫師：
                 <input type="text" name="visa_doctor" class="insert" readonly=true 
-                    value="<?php echo $row['doctor']; ?>">
+                    value="<?php echo $Urow['user_name']; ?>">
             </td>
         </tr>
         <tr>

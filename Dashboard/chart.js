@@ -220,7 +220,7 @@ var chart = c3.generate({
     axis: {
         x: {
             type: 'category',
-            categories: ['5/29', '5/30', '5/31', '6/1', '6/2', '6/3', '6/4']
+            categories: ['5/23', '5/24', '5/25', '5/26', '5/27', '5/28', '5/29']
         }
     },
     tooltip: {
@@ -251,7 +251,7 @@ var chart = c3.generate({
     axis: {
         x: {
             type: 'category',
-            categories: ['5/29', '5/30', '5/31', '6/1', '6/2', '6/3', '6/4']
+            categories: ['5/23', '5/24', '5/25', '5/26', '5/27', '5/28', '5/29']
         },
         y: {
             tick: {
